@@ -1,0 +1,36 @@
+{
+  "name": "tts-casino",
+  "version": "1.0.0",
+  "description": "An automated Tabletop Simulator Casino table",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "reload": "dotenv -- tts-dev-helper compile -s ./src/tts -i ./src/includes --reload",
+    "extract": "dotenv -- tts-dev-helper extract -d ./src/tts",
+    "compile": "dotenv -- tts-dev-helper compile -s ./src/tts -i ./src/includes"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/OhYea777/TTS-Casino.git"
+  },
+  "keywords": [
+    "tts",
+    "tabletop-simulator",
+    "casino"
+  ],
+  "author": "OhYea777",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/OhYea777/TTS-Casino/issues"
+  },
+  "homepage": "https://github.com/OhYea777/TTS-Casino#readme",
+  "dependencies": {
+    "dotenv-cli": "^7.4.2",
+    "fs-extra": "^11.2.0",
+    "node-fetch": "^3.3.2",
+    "tts-dev-helper": "^0.1.5"
+  },
+  "devDependencies": {
+    "@types/fs-extra": "^11.0.4"
+  }
+}

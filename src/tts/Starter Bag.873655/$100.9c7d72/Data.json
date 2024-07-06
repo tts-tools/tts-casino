@@ -1,0 +1,58 @@
+{
+  "GUID": "9c7d72",
+  "Name": "Custom_Model_Stack",
+  "Transform": {
+    "posX": 19.4058247,
+    "posY": 3.129602,
+    "posZ": -26.5692024,
+    "rotX": 358.854675,
+    "rotY": 359.958954,
+    "rotZ": 1.5357722,
+    "scaleX": 1.49999964,
+    "scaleY": 1.49999964,
+    "scaleZ": 1.49999964
+  },
+  "Nickname": "$100",
+  "Description": "100 Dollars",
+  "GMNotes": "",
+  "AltLookAngle": {
+    "x": 0,
+    "y": 0,
+    "z": 0
+  },
+  "ColorDiffuse": {
+    "r": 1,
+    "g": 1,
+    "b": 1
+  },
+  "Tags": [
+    "chip"
+  ],
+  "LayoutGroupSortIndex": 0,
+  "Value": 0,
+  "Locked": false,
+  "Grid": true,
+  "Snap": true,
+  "IgnoreFoW": false,
+  "MeasureMovement": false,
+  "DragSelectable": true,
+  "Autoraise": true,
+  "Sticky": true,
+  "Tooltip": true,
+  "GridProjection": false,
+  "HideWhenFaceDown": false,
+  "Hands": false,
+  "MaterialIndex": -1,
+  "MeshIndex": -1,
+  "Number": 20,
+  "CustomMesh": {
+    "MeshURL": "http://cloud-3.steamusercontent.com/ugc/2056504269108415737/DBD1F0B687C6A0E4B735E6034664780907AF83CE/",
+    "DiffuseURL": "http://cloud-3.steamusercontent.com/ugc/2055379004087637867/B76C5E743E9777B9473A3559C5B632A0E4FAA402/",
+    "NormalURL": "",
+    "ColliderURL": "",
+    "Convex": true,
+    "MaterialIndex": 1,
+    "TypeIndex": 5,
+    "CastShadows": true
+  }
+}

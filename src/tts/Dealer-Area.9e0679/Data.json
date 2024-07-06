@@ -1,0 +1,46 @@
+{
+  "GUID": "9e0679",
+  "Name": "FogOfWarTrigger",
+  "Transform": {
+    "posX": 0,
+    "posY": 5,
+    "posZ": -31.5,
+    "rotX": 0,
+    "rotY": 0,
+    "rotZ": 0,
+    "scaleX": 44,
+    "scaleY": 9,
+    "scaleZ": 15.9
+  },
+  "Nickname": "Dealer-Area",
+  "Description": "",
+  "GMNotes": "",
+  "AltLookAngle": {
+    "x": 0,
+    "y": 0,
+    "z": 0
+  },
+  "ColorDiffuse": {
+    "r": 0.24999997,
+    "g": 0.24999997,
+    "b": 0.24999997
+  },
+  "LayoutGroupSortIndex": 0,
+  "Value": 0,
+  "Locked": true,
+  "Grid": true,
+  "Snap": true,
+  "IgnoreFoW": false,
+  "MeasureMovement": false,
+  "DragSelectable": true,
+  "Autoraise": true,
+  "Sticky": true,
+  "Tooltip": true,
+  "GridProjection": false,
+  "HideWhenFaceDown": false,
+  "Hands": false,
+  "FogColor": "Black",
+  "FogHidePointers": true,
+  "FogReverseHiding": false,
+  "FogSeethrough": false
+}

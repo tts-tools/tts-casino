@@ -1,0 +1,52 @@
+{
+  "GUID": "fe264b",
+  "Name": "Custom_Model",
+  "Transform": {
+    "posX": 7.382095,
+    "posY": 2.83862352,
+    "posZ": 0.195236608,
+    "rotX": -0.004219363,
+    "rotY": 0.02776998,
+    "rotZ": 0.00490157073,
+    "scaleX": 1.49999964,
+    "scaleY": 1.49999964,
+    "scaleZ": 1.49999964
+  },
+  "Nickname": "$10N",
+  "Description": "10 Nonillion Dollars",
+  "GMNotes": "",
+  "AltLookAngle": {
+    "x": 0,
+    "y": 0,
+    "z": 0
+  },
+  "ColorDiffuse": {
+    "r": 1,
+    "g": 1,
+    "b": 1
+  },
+  "LayoutGroupSortIndex": 0,
+  "Value": 0,
+  "Locked": false,
+  "Grid": true,
+  "Snap": true,
+  "IgnoreFoW": false,
+  "MeasureMovement": false,
+  "DragSelectable": true,
+  "Autoraise": true,
+  "Sticky": true,
+  "Tooltip": true,
+  "GridProjection": false,
+  "HideWhenFaceDown": false,
+  "Hands": false,
+  "CustomMesh": {
+    "MeshURL": "http://cloud-3.steamusercontent.com/ugc/2056504269108415737/DBD1F0B687C6A0E4B735E6034664780907AF83CE/",
+    "DiffuseURL": "http://cloud-3.steamusercontent.com/ugc/2508023918742012142/23A72EC4639FE7497A77639D3736CDF2D9387DD9/",
+    "NormalURL": "",
+    "ColliderURL": "",
+    "Convex": true,
+    "MaterialIndex": 1,
+    "TypeIndex": 5,
+    "CastShadows": true
+  }
+}

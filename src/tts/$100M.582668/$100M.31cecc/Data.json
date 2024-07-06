@@ -1,0 +1,52 @@
+{
+  "GUID": "31cecc",
+  "Name": "Custom_Model",
+  "Transform": {
+    "posX": -10.6215038,
+    "posY": 2.853619,
+    "posZ": -2.045461,
+    "rotX": -0.0006559907,
+    "rotY": 0.0148621816,
+    "rotZ": -0.0002441829,
+    "scaleX": 1.49999964,
+    "scaleY": 1.49999964,
+    "scaleZ": 1.49999964
+  },
+  "Nickname": "$100M",
+  "Description": "100 Million Dollars",
+  "GMNotes": "",
+  "AltLookAngle": {
+    "x": 0,
+    "y": 0,
+    "z": 0
+  },
+  "ColorDiffuse": {
+    "r": 0.98999995,
+    "g": 1,
+    "b": 0.98999995
+  },
+  "LayoutGroupSortIndex": 0,
+  "Value": 0,
+  "Locked": false,
+  "Grid": true,
+  "Snap": true,
+  "IgnoreFoW": false,
+  "MeasureMovement": false,
+  "DragSelectable": true,
+  "Autoraise": true,
+  "Sticky": true,
+  "Tooltip": true,
+  "GridProjection": false,
+  "HideWhenFaceDown": false,
+  "Hands": false,
+  "CustomMesh": {
+    "MeshURL": "http://cloud-3.steamusercontent.com/ugc/2056504269108415737/DBD1F0B687C6A0E4B735E6034664780907AF83CE/",
+    "DiffuseURL": "http://cloud-3.steamusercontent.com/ugc/2508023918742031842/C7A5E5FEA20AACA6E77664C01FABA24FEA499E59/",
+    "NormalURL": "",
+    "ColliderURL": "",
+    "Convex": true,
+    "MaterialIndex": 1,
+    "TypeIndex": 5,
+    "CastShadows": true
+  }
+}

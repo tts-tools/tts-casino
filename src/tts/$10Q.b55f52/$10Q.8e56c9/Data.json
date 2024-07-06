@@ -1,0 +1,52 @@
+{
+  "GUID": "8e56c9",
+  "Name": "Custom_Model",
+  "Transform": {
+    "posX": -1.78065062,
+    "posY": 2.83860016,
+    "posZ": 0.0502968878,
+    "rotX": 0.0000447584243,
+    "rotY": 0.0135217151,
+    "rotZ": 0.000463487318,
+    "scaleX": 1.49999964,
+    "scaleY": 1.49999964,
+    "scaleZ": 1.49999964
+  },
+  "Nickname": "$10Q",
+  "Description": "10 Quintillion Dollars",
+  "GMNotes": "",
+  "AltLookAngle": {
+    "x": 0,
+    "y": 0,
+    "z": 0
+  },
+  "ColorDiffuse": {
+    "r": 1,
+    "g": 1,
+    "b": 1
+  },
+  "LayoutGroupSortIndex": 0,
+  "Value": 0,
+  "Locked": false,
+  "Grid": true,
+  "Snap": true,
+  "IgnoreFoW": false,
+  "MeasureMovement": false,
+  "DragSelectable": true,
+  "Autoraise": true,
+  "Sticky": true,
+  "Tooltip": true,
+  "GridProjection": false,
+  "HideWhenFaceDown": false,
+  "Hands": false,
+  "CustomMesh": {
+    "MeshURL": "http://cloud-3.steamusercontent.com/ugc/2056504269108415737/DBD1F0B687C6A0E4B735E6034664780907AF83CE/",
+    "DiffuseURL": "http://cloud-3.steamusercontent.com/ugc/2508023918742022525/6CF7DCA0852E6589FE40AE974B35A35D4EDBA942/",
+    "NormalURL": "",
+    "ColliderURL": "",
+    "Convex": true,
+    "MaterialIndex": 1,
+    "TypeIndex": 5,
+    "CastShadows": true
+  }
+}

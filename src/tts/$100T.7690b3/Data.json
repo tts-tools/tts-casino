@@ -1,0 +1,67 @@
+{
+  "GUID": "7690b3",
+  "Name": "Custom_Model_Infinite_Bag",
+  "Transform": {
+    "posX": -4.599559,
+    "posY": 1.91749978,
+    "posZ": -25.9118176,
+    "rotX": -0.000005285145,
+    "rotY": 0.008595203,
+    "rotZ": 5.68543754e-8,
+    "scaleX": 0.7499998,
+    "scaleY": 0.7499998,
+    "scaleZ": 0.7499998
+  },
+  "Nickname": "$100T",
+  "Description": "",
+  "GMNotes": "",
+  "AltLookAngle": {
+    "x": 0,
+    "y": 0,
+    "z": 0
+  },
+  "ColorDiffuse": {
+    "r": 0.345091432,
+    "g": 0.58431375,
+    "b": 0.239209026
+  },
+  "Tags": [
+    "chip"
+  ],
+  "LayoutGroupSortIndex": 0,
+  "Value": 0,
+  "Locked": true,
+  "Grid": true,
+  "Snap": true,
+  "IgnoreFoW": false,
+  "MeasureMovement": false,
+  "DragSelectable": true,
+  "Autoraise": true,
+  "Sticky": true,
+  "Tooltip": true,
+  "GridProjection": false,
+  "HideWhenFaceDown": false,
+  "Hands": false,
+  "MaterialIndex": -1,
+  "MeshIndex": -1,
+  "CustomMesh": {
+    "MeshURL": "http://cloud-3.steamusercontent.com/ugc/2056504269108417190/4C648ECC9AEF8EF9E43A28426CC52ED630B1F4EB/",
+    "DiffuseURL": "http://cloud-3.steamusercontent.com/ugc/2056504269108417272/B28CCCE6A1F726E194EE5BC996B160E08E6584B9/",
+    "NormalURL": "",
+    "ColliderURL": "http://cloud-3.steamusercontent.com/ugc/2056504269108417355/5D8F9BF63A7F6A75B5D0FAA7A4372E968720996D/",
+    "Convex": true,
+    "MaterialIndex": 2,
+    "TypeIndex": 7,
+    "CustomShader": {
+      "SpecularColor": {
+        "r": 0,
+        "g": 0,
+        "b": 0
+      },
+      "SpecularIntensity": 0,
+      "SpecularSharpness": 2,
+      "FresnelStrength": 0
+    },
+    "CastShadows": false
+  }
+}

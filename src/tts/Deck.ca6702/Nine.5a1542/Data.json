@@ -1,0 +1,55 @@
+{
+  "GUID": "5a1542",
+  "Name": "Card",
+  "Transform": {
+    "posX": 15.6838093,
+    "posY": 0.9936049,
+    "posZ": 28.9210758,
+    "rotX": 5.4065417e-8,
+    "rotY": 0.000009136303,
+    "rotZ": -3.05339931e-9,
+    "scaleX": 1.33,
+    "scaleY": 1,
+    "scaleZ": 1.33
+  },
+  "Nickname": "Nine",
+  "Description": "Clubs",
+  "GMNotes": "",
+  "AltLookAngle": {
+    "x": 0,
+    "y": 0,
+    "z": 0
+  },
+  "ColorDiffuse": {
+    "r": 0.713235259,
+    "g": 0.713235259,
+    "b": 0.713235259
+  },
+  "LayoutGroupSortIndex": 0,
+  "Value": 0,
+  "Locked": false,
+  "Grid": true,
+  "Snap": true,
+  "IgnoreFoW": false,
+  "MeasureMovement": false,
+  "DragSelectable": true,
+  "Autoraise": true,
+  "Sticky": true,
+  "Tooltip": true,
+  "GridProjection": false,
+  "HideWhenFaceDown": true,
+  "Hands": true,
+  "CardID": 788308,
+  "SidewaysCard": false,
+  "CustomDeck": {
+    "7883": {
+      "FaceURL": "http://cloud-3.steamusercontent.com/ugc/2055379004118819148/A3BD81E99246933E6BFB9BBDE6C19ADFA71D560B/",
+      "BackURL": "http://cloud-3.steamusercontent.com/ugc/2055379004118809517/4ED05CBAE8C5E393A5E33844CD4D68E958BCE5CE/",
+      "NumWidth": 10,
+      "NumHeight": 6,
+      "BackIsHidden": false,
+      "UniqueBack": false,
+      "Type": 0
+    }
+  }
+}

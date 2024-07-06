@@ -1,0 +1,52 @@
+{
+  "GUID": "b929b9",
+  "Name": "Custom_Model",
+  "Transform": {
+    "posX": -31.8,
+    "posY": 1,
+    "posZ": 0,
+    "rotX": 0,
+    "rotY": 0,
+    "rotZ": 0,
+    "scaleX": 1,
+    "scaleY": 1,
+    "scaleZ": 1
+  },
+  "Nickname": "Purple-Board",
+  "Description": "",
+  "GMNotes": "",
+  "AltLookAngle": {
+    "x": 0,
+    "y": 0,
+    "z": 0
+  },
+  "ColorDiffuse": {
+    "r": 0.478431284,
+    "g": 0.0470567122,
+    "b": 0.7490196
+  },
+  "LayoutGroupSortIndex": 0,
+  "Value": 0,
+  "Locked": true,
+  "Grid": false,
+  "Snap": false,
+  "IgnoreFoW": false,
+  "MeasureMovement": false,
+  "DragSelectable": false,
+  "Autoraise": true,
+  "Sticky": true,
+  "Tooltip": false,
+  "GridProjection": false,
+  "HideWhenFaceDown": false,
+  "Hands": false,
+  "CustomMesh": {
+    "MeshURL": "http://cloud-3.steamusercontent.com/ugc/2508023918742235571/064D0123D7CDCA08EC95A27634C6D53E88EF44AD/",
+    "DiffuseURL": "http://cloud-3.steamusercontent.com/ugc/2508023918742234488/0F21FD81E83C6F9464918EDD2BD1066E1A1417B4/",
+    "NormalURL": "",
+    "ColliderURL": "http://cloud-3.steamusercontent.com/ugc/2508023918742235571/064D0123D7CDCA08EC95A27634C6D53E88EF44AD/",
+    "Convex": false,
+    "MaterialIndex": 1,
+    "TypeIndex": 4,
+    "CastShadows": true
+  }
+}

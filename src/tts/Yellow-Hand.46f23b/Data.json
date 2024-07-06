@@ -1,0 +1,44 @@
+{
+  "GUID": "46f23b",
+  "Name": "HandTrigger",
+  "Transform": {
+    "posX": 31.8,
+    "posY": 1.5,
+    "posZ": 20.4,
+    "rotX": 0,
+    "rotY": 195,
+    "rotZ": 0,
+    "scaleX": 14.07,
+    "scaleY": 7,
+    "scaleZ": 1.34608555
+  },
+  "Nickname": "Yellow-Hand",
+  "Description": "",
+  "GMNotes": "",
+  "AltLookAngle": {
+    "x": 0,
+    "y": 0,
+    "z": 0
+  },
+  "ColorDiffuse": {
+    "r": 0.905,
+    "g": 0.898,
+    "b": 0.171999961,
+    "a": 0
+  },
+  "LayoutGroupSortIndex": 0,
+  "Value": 0,
+  "Locked": true,
+  "Grid": false,
+  "Snap": true,
+  "IgnoreFoW": false,
+  "MeasureMovement": false,
+  "DragSelectable": true,
+  "Autoraise": true,
+  "Sticky": true,
+  "Tooltip": true,
+  "GridProjection": false,
+  "HideWhenFaceDown": false,
+  "Hands": false,
+  "FogColor": "Yellow"
+}

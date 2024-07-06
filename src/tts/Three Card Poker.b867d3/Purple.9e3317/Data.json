@@ -1,0 +1,42 @@
+{
+  "GUID": "9e3317",
+  "Name": "BlockSquare",
+  "Transform": {
+    "posX": -37.1,
+    "posY": 0.999999046,
+    "posZ": 12.75,
+    "rotX": 2.1864226e-8,
+    "rotY": -0.0000700894961,
+    "rotZ": 3.85064e-8,
+    "scaleX": 1.1,
+    "scaleY": 2,
+    "scaleZ": 1.1
+  },
+  "Nickname": "Purple",
+  "Description": "",
+  "GMNotes": "",
+  "AltLookAngle": {
+    "x": 0,
+    "y": 0,
+    "z": 0
+  },
+  "ColorDiffuse": {
+    "r": 0.627,
+    "g": 0.124999918,
+    "b": 0.941
+  },
+  "LayoutGroupSortIndex": 0,
+  "Value": 0,
+  "Locked": true,
+  "Grid": false,
+  "Snap": false,
+  "IgnoreFoW": false,
+  "MeasureMovement": false,
+  "DragSelectable": false,
+  "Autoraise": true,
+  "Sticky": true,
+  "Tooltip": true,
+  "GridProjection": false,
+  "HideWhenFaceDown": false,
+  "Hands": false
+}

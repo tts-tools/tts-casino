@@ -1,0 +1,42 @@
+{
+  "GUID": "725e3e",
+  "Name": "BlockSquare",
+  "Transform": {
+    "posX": -53,
+    "posY": 0.999999046,
+    "posZ": 5.1,
+    "rotX": 0,
+    "rotY": -0.0000700897363,
+    "rotZ": 5.19605834e-8,
+    "scaleX": 1.1,
+    "scaleY": 2,
+    "scaleZ": 1.1
+  },
+  "Nickname": "Pink",
+  "Description": "",
+  "GMNotes": "",
+  "AltLookAngle": {
+    "x": 0,
+    "y": 0,
+    "z": 0
+  },
+  "ColorDiffuse": {
+    "r": 0.96,
+    "g": 0.438999921,
+    "b": 0.807
+  },
+  "LayoutGroupSortIndex": 0,
+  "Value": 0,
+  "Locked": true,
+  "Grid": false,
+  "Snap": false,
+  "IgnoreFoW": false,
+  "MeasureMovement": false,
+  "DragSelectable": false,
+  "Autoraise": true,
+  "Sticky": true,
+  "Tooltip": true,
+  "GridProjection": false,
+  "HideWhenFaceDown": false,
+  "Hands": false
+}

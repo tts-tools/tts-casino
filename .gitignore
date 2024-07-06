@@ -75,3 +75,5 @@ common/autoinstallers/*/.npmrc
 # Build files
 dist
 out
+
+*.old/

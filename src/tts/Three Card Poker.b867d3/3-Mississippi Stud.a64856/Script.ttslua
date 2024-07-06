@@ -1,0 +1,8 @@
+function onLoad()
+  print('Load: ' .. self.getName())
+end
+
+---@param gid string
+function onStateChange(gid)
+  print('Changed to: ' .. self.getName() .. ' from ' .. gid)
+end

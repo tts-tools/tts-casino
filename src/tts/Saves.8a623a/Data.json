@@ -1,0 +1,48 @@
+{
+  "GUID": "8a623a",
+  "Name": "Bag",
+  "Transform": {
+    "posX": 20,
+    "posY": 0.8,
+    "posZ": -29.5,
+    "rotX": 0,
+    "rotY": -0.00000391468438,
+    "rotZ": 0.0005900243,
+    "scaleX": 1,
+    "scaleY": 1,
+    "scaleZ": 1
+  },
+  "Nickname": "Saves",
+  "Description": "",
+  "GMNotes": "",
+  "AltLookAngle": {
+    "x": 0,
+    "y": 0,
+    "z": 0
+  },
+  "ColorDiffuse": {
+    "r": 0.7058823,
+    "g": 0.366520882,
+    "b": 0
+  },
+  "LayoutGroupSortIndex": 0,
+  "Value": 0,
+  "Locked": true,
+  "Grid": true,
+  "Snap": true,
+  "IgnoreFoW": false,
+  "MeasureMovement": false,
+  "DragSelectable": true,
+  "Autoraise": true,
+  "Sticky": true,
+  "Tooltip": true,
+  "GridProjection": false,
+  "HideWhenFaceDown": false,
+  "Hands": false,
+  "MaterialIndex": -1,
+  "MeshIndex": -1,
+  "Number": 0,
+  "Bag": {
+    "Order": 0
+  }
+}

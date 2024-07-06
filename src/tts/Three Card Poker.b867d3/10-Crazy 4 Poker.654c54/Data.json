@@ -1,0 +1,474 @@
+{
+  "GUID": "654c54",
+  "Name": "Custom_Model",
+  "Transform": {
+    "posX": 0,
+    "posY": 1,
+    "posZ": 0,
+    "rotX": 0,
+    "rotY": 0,
+    "rotZ": 0,
+    "scaleX": 1,
+    "scaleY": 0.01,
+    "scaleZ": 1
+  },
+  "Nickname": "Crazy 4 Poker",
+  "Description": "",
+  "GMNotes": "",
+  "AltLookAngle": {
+    "x": 0,
+    "y": 0,
+    "z": 0
+  },
+  "ColorDiffuse": {
+    "r": 1,
+    "g": 1,
+    "b": 1
+  },
+  "LayoutGroupSortIndex": 0,
+  "Value": 0,
+  "Locked": true,
+  "Grid": false,
+  "Snap": false,
+  "IgnoreFoW": false,
+  "MeasureMovement": false,
+  "DragSelectable": false,
+  "Autoraise": true,
+  "Sticky": true,
+  "Tooltip": false,
+  "GridProjection": false,
+  "HideWhenFaceDown": false,
+  "Hands": false,
+  "CustomMesh": {
+    "MeshURL": "http://cloud-3.steamusercontent.com/ugc/2508023918742198305/5335C773299A911FEDABE6FA995B162124975471/",
+    "DiffuseURL": "http://cloud-3.steamusercontent.com/ugc/2508023918742205899/51EB69C7BACA38106DC95CA951C2CD039E4051D0/",
+    "NormalURL": "",
+    "ColliderURL": "http://cloud-3.steamusercontent.com/ugc/2508023918742198305/5335C773299A911FEDABE6FA995B162124975471/",
+    "Convex": false,
+    "MaterialIndex": 1,
+    "TypeIndex": 4,
+    "CastShadows": true
+  },
+  "AttachedSnapPoints": [
+    {
+      "Position": {
+        "x": 53.7,
+        "y": 0.1,
+        "z": 3.53
+      },
+      "Rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      }
+    },
+    {
+      "Position": {
+        "x": 50.7,
+        "y": 0.1,
+        "z": 3.53
+      },
+      "Rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      }
+    },
+    {
+      "Position": {
+        "x": 47.7,
+        "y": 0.1,
+        "z": 3.53
+      },
+      "Rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      }
+    },
+    {
+      "Position": {
+        "x": 44.7,
+        "y": 0.1,
+        "z": 3.53
+      },
+      "Rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      }
+    },
+    {
+      "Position": {
+        "x": 41.7,
+        "y": 0.1,
+        "z": 3.53
+      },
+      "Rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      }
+    },
+    {
+      "Position": {
+        "x": 37.8,
+        "y": 0.1,
+        "z": 11.195
+      },
+      "Rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      }
+    },
+    {
+      "Position": {
+        "x": 34.8,
+        "y": 0.1,
+        "z": 11.195
+      },
+      "Rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      }
+    },
+    {
+      "Position": {
+        "x": 31.8,
+        "y": 0.1,
+        "z": 11.195
+      },
+      "Rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      }
+    },
+    {
+      "Position": {
+        "x": 28.8,
+        "y": 0.1,
+        "z": 11.195
+      },
+      "Rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      }
+    },
+    {
+      "Position": {
+        "x": 25.8,
+        "y": 0.1,
+        "z": 11.195
+      },
+      "Rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      }
+    },
+    {
+      "Position": {
+        "x": 21.9,
+        "y": 0.1,
+        "z": 16.67
+      },
+      "Rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      }
+    },
+    {
+      "Position": {
+        "x": 18.9,
+        "y": 0.1,
+        "z": 16.67
+      },
+      "Rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      }
+    },
+    {
+      "Position": {
+        "x": 15.9,
+        "y": 0.1,
+        "z": 16.67
+      },
+      "Rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      }
+    },
+    {
+      "Position": {
+        "x": 12.9,
+        "y": 0.1,
+        "z": 16.67
+      },
+      "Rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      }
+    },
+    {
+      "Position": {
+        "x": 9.9,
+        "y": 0.1,
+        "z": 16.67
+      },
+      "Rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      }
+    },
+    {
+      "Position": {
+        "x": 6,
+        "y": 0.1,
+        "z": 16.67
+      },
+      "Rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      }
+    },
+    {
+      "Position": {
+        "x": 3,
+        "y": 0.1,
+        "z": 16.67
+      },
+      "Rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      }
+    },
+    {
+      "Position": {
+        "x": 0,
+        "y": 0.1,
+        "z": 16.67
+      },
+      "Rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      }
+    },
+    {
+      "Position": {
+        "x": -3,
+        "y": 0.1,
+        "z": 16.67
+      },
+      "Rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      }
+    },
+    {
+      "Position": {
+        "x": -6,
+        "y": 0.1,
+        "z": 16.67
+      },
+      "Rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      }
+    },
+    {
+      "Position": {
+        "x": -9.9,
+        "y": 0.1,
+        "z": 16.67
+      },
+      "Rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      }
+    },
+    {
+      "Position": {
+        "x": -12.9,
+        "y": 0.1,
+        "z": 16.67
+      },
+      "Rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      }
+    },
+    {
+      "Position": {
+        "x": -15.9,
+        "y": 0.1,
+        "z": 16.67
+      },
+      "Rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      }
+    },
+    {
+      "Position": {
+        "x": -18.9,
+        "y": 0.1,
+        "z": 16.67
+      },
+      "Rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      }
+    },
+    {
+      "Position": {
+        "x": -21.9,
+        "y": 0.1,
+        "z": 16.67
+      },
+      "Rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      }
+    },
+    {
+      "Position": {
+        "x": -25.8,
+        "y": 0.1,
+        "z": 11.195
+      },
+      "Rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      }
+    },
+    {
+      "Position": {
+        "x": -28.8,
+        "y": 0.1,
+        "z": 11.195
+      },
+      "Rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      }
+    },
+    {
+      "Position": {
+        "x": -31.8,
+        "y": 0.1,
+        "z": 11.195
+      },
+      "Rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      }
+    },
+    {
+      "Position": {
+        "x": -34.8,
+        "y": 0.1,
+        "z": 11.195
+      },
+      "Rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      }
+    },
+    {
+      "Position": {
+        "x": -37.8,
+        "y": 0.1,
+        "z": 11.195
+      },
+      "Rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      }
+    },
+    {
+      "Position": {
+        "x": -41.7,
+        "y": 0.1,
+        "z": 3.53
+      },
+      "Rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      }
+    },
+    {
+      "Position": {
+        "x": -44.7,
+        "y": 0.1,
+        "z": 3.53
+      },
+      "Rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      }
+    },
+    {
+      "Position": {
+        "x": -47.7,
+        "y": 0.1,
+        "z": 3.53
+      },
+      "Rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      }
+    },
+    {
+      "Position": {
+        "x": -50.7,
+        "y": 0.1,
+        "z": 3.53
+      },
+      "Rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      }
+    },
+    {
+      "Position": {
+        "x": -53.7,
+        "y": 0.1,
+        "z": 3.53
+      },
+      "Rotation": {
+        "x": 0,
+        "y": 0,
+        "z": 0
+      }
+    }
+  ]
+}

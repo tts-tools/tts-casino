@@ -1,0 +1,12 @@
+---@meta
+
+---@class Class
+---@field __name string
+---
+---@field __super Class
+---@field __super_name string
+---
+---@field __object Global | Object
+---@field __object_type string
+---
+---@field constructor fun(self: self, ...): nil

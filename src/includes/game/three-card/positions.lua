@@ -12,7 +12,7 @@ local THREE_CARD_POSITIONS = {
 
   players = {
     Pink = {
-      indicator = { 53, 0.1, -5.1 },
+      ui = { 47.7, 0.5, -6.53 },
 
       bets = {
         { 46.04, 0, 8.42 }, -- Six Card
@@ -29,7 +29,7 @@ local THREE_CARD_POSITIONS = {
     },
 
     Purple = {
-      indicator = { 37.1, 0.1, -12.75 },
+      ui = { 31.8, 0.5, -14.195 },
 
       bets = {
         { 30.14, 0, 0.755 }, -- Six Card
@@ -46,7 +46,7 @@ local THREE_CARD_POSITIONS = {
     },
 
     Blue = {
-      indicator = { 21.2, 0.1, -18.27 },
+      ui = { 15.9, 0.5, -19.67 },
 
       bets = {
         { 14.24, 0, -4.72 }, -- Six Card
@@ -63,7 +63,7 @@ local THREE_CARD_POSITIONS = {
     },
 
     Teal = {
-      indicator = { 5.3, 0.1, -18.27 },
+      ui = { 0, 0.5, -19.67 },
 
       bets = {
         { -1.66, 0, -4.72 }, -- Six Card
@@ -80,7 +80,7 @@ local THREE_CARD_POSITIONS = {
     },
 
     Green = {
-      indicator = { -10.6, 0.1, -18.27 },
+      ui = { -15.9, 0.5, -19.67 },
 
       bets = {
         { -17.56, 0, -4.72 }, -- Six Card
@@ -97,7 +97,7 @@ local THREE_CARD_POSITIONS = {
     },
 
     Yellow = {
-      indicator = { -26.5, 0.1, -12.75 },
+      ui = { -31.8, 0.5, -14.195 },
 
       bets = {
         { -33.46, 0, 0.755 }, -- Six Card
@@ -114,7 +114,7 @@ local THREE_CARD_POSITIONS = {
     },
 
     Orange = {
-      indicator = { -42.4, 0.1, -5.1 },
+      ui = { -47.7, 0.1, -6.53 },
 
       bets = {
         { -49.36, 0, 8.42 }, -- Six Card

@@ -37,10 +37,10 @@ local hand_status = {
 ---@field dealCardsTo fun(self: self, positions: VectorLike[], flip?: boolean): Object[]
 ---@field updateHandOwner fun(self: self, zone_color: string, object: Object): nil
 ---
----@field createButtons fun(self: self): nil
----@field leftButtonClick fun(self: self, player_color: string, alt: boolean, color: string): nil
----@field rightButtonClick fun(self: self, player_color: string, alt: boolean, color: string): nil
----@field centerButtonClick fun(self: self, player_color: string, alt: boolean, color: string): nil
+---@field handUILoaded fun(self: self, color: string, hand_ui: Object): nil
+---@field leftButtonClick fun(self: self, player_color: string, color: string): nil
+---@field rightButtonClick fun(self: self, player_color: string, color: string): nil
+---@field centerButtonClick fun(self: self, player_color: string, color: string): nil
 ---
 ---@field onObjectEnterZone fun(self: self, zone: Object, object: Object): nil
 ---@field onObjectLeaveZone fun(self: self, zone: Object, object: Object): nil

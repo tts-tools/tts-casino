@@ -3,6 +3,7 @@ require('game.game')
 require('utils.misc')
 require('game.three-card.text')
 
+local HAND_UI = require('game.three-card.ui.hand')
 local THREE_CARD_POSITIONS = require('game.three-card.positions')
 
 ---@type ThreeCard
@@ -14,7 +15,7 @@ local ThreeCard = {
   ---@param self ThreeCard
   constructor = function(self)
     self:clearGameObjects()
-    self:createObjects(THREE_CARD_POSITIONS.players)
+    self:createObjects(THREE_CARD_POSITIONS.players, HAND_UI)
     self:createButtons()
 
     self.player_text = loadText()
@@ -148,14 +149,29 @@ local ThreeCard = {
 
       if hand.status == 'folding' then
         text.setValue('Folding')
+
+        local hand_ui = self.hand_owners[color].hand_ui.UI
+        if not hand_ui.loading then
+          hand_ui.setAttribute('btn-center', 'active', false)
+        end
       elseif (has_pair and not has_ante) or (has_ante and has_play) then
         text.setValue('Playing')
-        --self:hideButton('center-' .. color)
+
+        local hand_ui = self.hand_owners[color].hand_ui.UI
+        if not hand_ui.loading then
+          hand_ui.setAttribute('btn-center', 'active', false)
+        end
 
         hand.status = 'playing'
       else
         text.setValue('Thinking')
-        self:showButton('center-' .. color, color)
+
+        local hand_ui = self.hand_owners[color].hand_ui.UI
+        if not hand_ui.loading then
+          hand_ui.setAttribute('btn-center', 'text', 'Fold')
+          hand_ui.setAttribute('btn-center', 'visibility', hand.player.color)
+          hand_ui.setAttribute('btn-center', 'active', true)
+        end
 
         hand.status = 'thinking'
       end
@@ -223,56 +239,27 @@ local ThreeCard = {
     for color, player in pairs(seatedPlayers) do
       if object.hasTag('steam-' .. player.steam_id) then
         self.hand_owners[zone_color].player = player
-        self.hand_owners[zone_color].indicator.setColorTint(color)
+        --self.hand_owners[zone_color].indicator.setColorTint(color)
         return
       end
     end
   end,
 
-  createButtons = function(self)
-    local rotation = self:getRotation()
-
-    for color, positions in pairs(THREE_CARD_POSITIONS.players) do
-      local position = positions.cards[2]
-
-      self:createButton('left-' .. color, {
-        scale = { 0, 0, 0 },
-        width = 1500,
-        height = 500,
-        rotation = rotation,
-        position = self.positionToWorld({ position[1] - 2, 1, -(position[3] - 3) }),
-        font_size = 420,
-      }, self.leftButtonClick, color)
-
-      self:createButton('center-' .. color, {
-        scale = { 0, 0, 0 },
-        width = 1500,
-        height = 500,
-        rotation = rotation,
-        position = self.positionToWorld({ position[1], 1, -(position[3] - 3) }),
-        font_size = 420,
-      }, self.centerButtonClick, color)
-
-      self:createButton('right-' .. color, {
-        scale = { 0, 0, 0 },
-        width = 1500,
-        height = 500,
-        rotation = rotation,
-        position = self.positionToWorld({ position[1] + 2, 1, -(position[3] - 3) }),
-        font_size = 420,
-      }, self.rightButtonClick, color)
-    end
+  handUILoaded = function (self, color, hand_ui)
+    hand_ui.UI.setAttribute('btn-left', 'onClick', self.__object.getGUID() .. '/' .. 'leftButtonClick(' .. color .. ')')
+    hand_ui.UI.setAttribute('btn-right', 'onClick', self.__object.getGUID() .. '/' .. 'rightButtonClick(' .. color .. ')')
+    hand_ui.UI.setAttribute('btn-center', 'onClick', self.__object.getGUID() .. '/' .. 'centerButtonClick(' .. color .. ')')
   end,
 
-  leftButtonClick = function(self, player_color, _, color)
+  leftButtonClick = function(self, player_color, color)
     print(string.format('Left button clicked by %s for %s', player_color, color))
   end,
 
-  rightButtonClick = function(self, player_color, _, color)
+  rightButtonClick = function(self, player_color, color)
     print(string.format('Right button clicked by %s for %s', player_color, color))
   end,
 
-  centerButtonClick = function(self, player_color, _, color)
+  centerButtonClick = function(self, player_color, color)
     if not self.hand_owners[color].player or self.hand_owners[color].player.color ~= player_color then return end
 
     if self.state == 1 and self.valid_hands[player_color] then
@@ -330,7 +317,7 @@ local ThreeCard = {
     if chip_count ~= 0 then return end
 
     self.hand_owners[zone_color].player = nil
-    self.hand_owners[zone_color].indicator.setColorTint({ 0, 0, 0, 0 })
+    --self.hand_owners[zone_color].indicator.setColorTint({ 0, 0, 0, 0 })
   end
 }
 
@@ -362,5 +349,29 @@ end
 function onObjectLeaveZone(zone, object)
   if game then
     game:onObjectLeaveZone(zone, object)
+  end
+end
+
+---@param player PlayerInstance
+---@param color string
+function leftButtonClick(player, color)
+  if game then
+    game:leftButtonClick(player.color, color)
+  end
+end
+
+---@param player PlayerInstance
+---@param color string
+function rightButtonClick(player, color)
+  if game then
+    game:rightButtonClick(player.color, color)
+  end
+end
+
+---@param player PlayerInstance
+---@param color string
+function centerButtonClick(player, color)
+  if game then
+    game:centerButtonClick(player.color, color)
   end
 end

@@ -96,7 +96,7 @@ class 'Game' {
     return self.button_count
   end,
 
-  createObjects = function(self, positions)
+  createObjects = function(self, positions, hand_ui)
     for color, position in pairs(positions) do
       self.bet_zones[color] = {}
       self.card_zones[color] = {}
@@ -129,21 +129,50 @@ class 'Game' {
         self.card_zones[color][index].setVar('index', index)
       end
 
-      local indicator = --[[---@type tts__Block]] spawnObject({
+      local ui_obj = spawnObject({
         type = 'BlockSquare',
         scale = { 1.1, 0.02, 1.1 },
         sound = false,
-        position = self.positionToWorld(position.indicator)
+        rotation = self.getRotation(),
+        position = self.positionToWorld(position.ui),
       })
 
-      indicator.addTag('game-object')
-      indicator.setLock(true)
-      indicator.setColorTint({ 0, 0, 0, 0 })
+      ui_obj.UI.setXml(hand_ui)
+      --ui_obj.UI.setXmlTable(hand_ui)
+
+      ui_obj.addTag('game-object')
+      ui_obj.setLock(true)
+      ui_obj.setColorTint({ 0, 0, 0, 0 })
 
       self.hand_owners[color] = {
-        indicator = indicator,
+        hand_ui = ui_obj,
+        loading = true,
       }
     end
+
+    local coroutine_name = string.random(10)
+    self:createCoroutine(function ()
+      local all_done = true
+
+      repeat
+        all_done = true
+
+        wait(0.5)
+
+        for color, hand in pairs(self.hand_owners) do
+          if hand.loading then
+            if hand.hand_ui.UI.loading then
+              all_done = false
+            else
+              hand.loading = false
+              self:handUILoaded(color, hand.hand_ui)
+            end
+          end
+        end
+      until all_done
+
+      return 1
+    end, coroutine_name)
   end,
 
   createCoroutine = function(_, fn, fn_name)

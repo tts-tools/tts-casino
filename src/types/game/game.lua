@@ -6,9 +6,9 @@
 
 
 ---@class TablePlayerPositions
+---@field ui VectorLike
 ---@field bets VectorLike[]
 ---@field cards VectorLike[]
----@field indicator VectorLike
 
 
 ---@class TablePositions
@@ -26,7 +26,8 @@
 
 ---@class TableHandOwner
 ---@field player? PlayerInstance
----@field indicator? Object
+---@field hand_ui? Object
+---@field loading? boolean
 
 
 ---@class Game : Class, Object
@@ -48,6 +49,8 @@
 ---@field hideButton fun(self: self, name: string, label?: string): boolean
 ---@field showButton fun(self: self, name: string, label?: string): boolean
 ---@field createButton fun(self: self, name: string, parameters: Button.Parameters.Create, callback: (fun(self: self, player_color: string, alt: boolean, ...): nil), ...): number
----@field createObjects fun(self: self, positions: table<string, TablePlayerPositions>): nil
+---@field createObjects fun(self: self, positions: table<string, TablePlayerPositions>, hand_ui: string): nil
 ---@field createCoroutine fun(self: self, fn: (fun(): nil), fn_name?: string): nil
 ---@field clearGameObjects fun(self: self): nil
+---
+---@field handUILoaded? fun(self: self, color: string, hand_ui: Object): nil

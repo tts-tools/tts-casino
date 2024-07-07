@@ -150,12 +150,12 @@ local ThreeCard = {
         text.setValue('Folding')
       elseif (has_pair and not has_ante) or (has_ante and has_play) then
         text.setValue('Playing')
-        self:hideButton('center-' .. color)
+        --self:hideButton('center-' .. color)
 
         hand.status = 'playing'
       else
         text.setValue('Thinking')
-        self:showButton('center-' .. color, 'Fold')
+        self:showButton('center-' .. color, color)
 
         hand.status = 'thinking'
       end
@@ -240,7 +240,7 @@ local ThreeCard = {
         width = 1500,
         height = 500,
         rotation = rotation,
-        position = { position[1] + 2, 1, position[3] - 3 },
+        position = self.positionToWorld({ position[1] - 2, 1, -(position[3] - 3) }),
         font_size = 420,
       }, self.leftButtonClick, color)
 
@@ -249,7 +249,7 @@ local ThreeCard = {
         width = 1500,
         height = 500,
         rotation = rotation,
-        position = { position[1], 1, position[3] - 3 },
+        position = self.positionToWorld({ position[1], 1, -(position[3] - 3) }),
         font_size = 420,
       }, self.centerButtonClick, color)
 
@@ -258,7 +258,7 @@ local ThreeCard = {
         width = 1500,
         height = 500,
         rotation = rotation,
-        position = { position[1] - 2, 1, position[3] - 3 },
+        position = self.positionToWorld({ position[1] + 2, 1, -(position[3] - 3) }),
         font_size = 420,
       }, self.rightButtonClick, color)
     end
@@ -290,7 +290,6 @@ local ThreeCard = {
       local chips = findChips(self.bet_zones, color, true)
       for bet_type, bet in ipairs(chips) do
         for _, chip in ipairs(bet) do
-          print(bet_type)
           if bet_type == 2 or bet_type == 3 then
             destroyObject(chip)
           else

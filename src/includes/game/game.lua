@@ -4,22 +4,34 @@ require('utils.strings')
 local base = self
 
 class 'Game' {
-  state = 0,
-  buttons = {},
-  restart = false,
   bet_zones = {},
   card_zones = {},
-  hand_owners = {},
+  game_states = {},
+  previous_bets = {},
+  hand_positions = {},
 
-  startGame = function(self)
-    local coroutine_name = string.random(10)
+  hands = {},
+  restart = false,
+  game_state = 0,
+  dealer_cards = {},
+  player_cards = {},
+  community_cards = {},
 
-    self:createCoroutine(function()
+  constructor = function (self, positions, hand_ui)
+    self.hand_ui = hand_ui
+    self.positions = positions
+
+    self:createGameObjects()
+  end,
+
+  start = function (self)
+    local state_coroutine_name = string.random(10)
+    self:createCoroutine(function ()
       while true do
         for state, state_fn in ipairs(self.game_states) do
           repeat
             if self.isDestroyed() then
-              self:clearGameObjects()
+              self:destroyGameObjects()
               return 1
             end
 
@@ -28,76 +40,132 @@ class 'Game' {
             if self.restart then
               self.restart = false;
 
-              startLuaCoroutine(base, coroutine_name)
+              startLuaCoroutine(base, state_coroutine_name)
 
               return 1
             end
-          until self.state == state
+          until self.game_state == state
 
           state_fn(self)
         end
       end
 
       return 1
-    end, coroutine_name)
+    end, state_coroutine_name)
+
+    if not self.tick then return end
+
+    self:createCoroutine(function ()
+      while true do
+        if self.isDestroyed() then
+          return 1
+        end
+
+        wait(0.5)
+
+        if 1 == self:tick() then
+          return 1
+        end
+      end
+
+      return 1
+    end)
   end,
 
-  editButton = function(self, name, parameters)
-    local button_index = self.buttons[name]
-    if not button_index then return false end
+  deal = function (self)
 
-    local edit_parameters = parameters
-    parameters.index = button_index
-
-    return self.__object.editButton(edit_parameters)
   end,
 
-  hideButton = function(self, name, label)
-    local button_index = self.buttons[name]
-    if not button_index then return false end
+  cleanup = function (self)
+    self.UI.setAttribute('deal_button', 'interactable', false)
 
-    return self.__object.editButton({
-      index = button_index,
-      scale = { 0, 0, 0 },
-    })
+    if self.deck then
+      for _, card in ipairs(self.dealer_cards) do
+        self.deck.putObject(card)
+      end
+
+      for _, cards in pairs(self.player_cards) do
+        for _, card in ipairs(cards) do
+          self.deck.putObject(card)
+        end
+      end
+
+      for _, card in ipairs(self.community_cards) do
+        self.deck.putObject(card)
+      end
+
+      wait(0.5)
+
+      self.hands = {}
+      self.dealer_cards = {}
+      self.player_cards = {}
+      self.community_cards = {}
+
+      self.UI.setAttribute('deal_button', 'text', 'Deal')
+      self.UI.setAttribute('deal_button', 'interactable', true)
+
+      self.game_state = 0
+    end
   end,
 
-  showButton = function(self, name, label)
-    local button_index = self.buttons[name]
-    if not button_index then return false end
-
-    local parameters = --[[@type Button.Parameters.Edit]] {
-      index = button_index,
-      scale = { 1, 1, 1 },
-    }
-
-    if label then
-      parameters.label = label
+  findDeck = function (self, force)
+    if self.deck and not force then
+      return self.deck
     end
 
-    return self.__object.editButton(parameters)
-  end,
+    local found = findObject('Deck', self.positionToWorld(self.positions.deck))
+    if found then
+      self.deck = found
 
-  createButton = function(self, name, parameters, callback, ...)
-    parameters.click_function = string.random(10)
-    parameters.function_owner = self.__object
-
-    local args = pack(...)
-
-    _G[parameters.click_function] = function(_, player_color, alt)
-      callback(self, player_color, alt, unpack(args))
+      return self.deck
     end
 
-    self.__object.createButton(parameters)
-
-    self.button_count = (self.button_count or -1) + 1
-    self.buttons[name] = self.button_count
-
-    return self.button_count
+    return nil
   end,
 
-  createObjects = function(self, positions, hand_ui)
-    for color, position in pairs(positions) do
+  dealCardsTo = function (self, positions, flip, amount)
+    local cards = {}
+    local count = 0
+
+    for _, position in ipairs(positions) do
+      wait(0.1)
+
+      local card = self.deck.takeObject({
+        position = self.positionToWorld(position),
+        rotation = flip and self.getRotation() or nil,
+      })
+
+      card.interactable = false
+
+      table.insert(cards, card)
+
+      if nil ~= amount then
+        count = count + 1
+
+        if count >= amount then
+          break
+        end
+      end
+    end
+
+    wait(0.5)
+
+    return cards
+  end,
+
+  createCoroutine = function (self, fn, fn_name)
+    fn_name = fn_name or string.random(10)
+
+    _G[fn_name] = fn
+    startLuaCoroutine(base, fn_name)
+  end,
+
+  createGameObjects = function (self)
+    print('create')
+
+    if not self.positions then return end
+
+    for color, position in pairs(self.positions.players) do
       self.bet_zones[color] = {}
       self.card_zones[color] = {}
 
@@ -129,24 +197,27 @@ class 'Game' {
         self.card_zones[color][index].setVar('index', index)
       end
 
-      local ui_obj = spawnObject({
-        type = 'BlockSquare',
-        scale = { 1.1, 0.02, 1.1 },
-        sound = false,
-        rotation = self.getRotation(),
-        position = self.positionToWorld(position.ui),
-      })
+      local ui_obj
+      if self.hand_ui then
+        ui_obj = spawnObject({
+          type = 'BlockSquare',
+          scale = { 1.1, 0.02, 1.1 },
+          sound = false,
+          rotation = self.getRotation(),
+          position = self.positionToWorld(position.ui),
+        })
 
-      ui_obj.UI.setXml(hand_ui)
-      --ui_obj.UI.setXmlTable(hand_ui)
+        ui_obj.UI.setXml(self.hand_ui)
+        ui_obj.addTag('game-object')
+        ui_obj.setLock(true)
+        ui_obj.setColorTint({ 0, 0, 0, 0 })
+      end
 
-      ui_obj.addTag('game-object')
-      ui_obj.setLock(true)
-      ui_obj.setColorTint({ 0, 0, 0, 0 })
-
-      self.hand_owners[color] = {
-        hand_ui = ui_obj,
-        loading = true,
+      self.hand_positions[color] = {
+        ui = ui_obj and ui_obj.UI or nil,
+        color = color,
+        loading = ui_obj and true or false,
+        ui_object = ui_obj,
       }
     end
 
@@ -159,13 +230,16 @@ class 'Game' {
 
         wait(0.5)
 
-        for color, hand in pairs(self.hand_owners) do
-          if hand.loading then
-            if hand.hand_ui.UI.loading then
+        for _, hand_position in pairs(self.hand_positions) do
+          if hand_position.ui and hand_position.loading then
+            if hand_position.ui.loading then
               all_done = false
             else
-              hand.loading = false
-              self:handUILoaded(color, hand.hand_ui)
+              hand_position.loading = false
+
+              if self.onHandUILoaded then
+                self:onHandUILoaded(hand_position)
+              end
             end
           end
         end
@@ -175,16 +249,11 @@ class 'Game' {
     end, coroutine_name)
   end,
 
-  createCoroutine = function(_, fn, fn_name)
-    fn_name = fn_name or string.random(10)
-
-    _G[fn_name] = fn
-    startLuaCoroutine(self, fn_name)
-  end,
-
-  clearGameObjects = function()
+  destroyGameObjects = function (self)
     for _, object in ipairs(getObjectsWithTag('game-object')) do
       object.destruct()
     end
+
+    print('destroy')
   end
 }

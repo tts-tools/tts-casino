@@ -24,33 +24,62 @@
 ---@alias ColorDetails table<string, ColorDetail>
 
 
----@class TableHandOwner
----@field player? PlayerInstance
----@field hand_ui? Object
----@field loading? boolean
+---@class GameBet
+---@field color string The color of the hand where the bet was placed
+---@field steam_id string The steam id of the player who placed the bet
+---@field chip_values number[] The values of the chips placed in the bet - correlates to `TablePlayerPositions.bets`
+
+
+---@class GameHandPosition
+---@field ui? UI
+---@field color string
+---@field loading? boolean The loading state of the hand's ui
+---@field ui_object? Object
+
+
+---@class GameHand
+---@field bet GameBet
+---@field player PlayerInstance
+---@field position GameHandPosition
 
 
 ---@class Game : Class, Object
 ---
 ---@field __super? Class
 ---
----@field deck? Object
----@field state integer
----@field buttons table<string, integer>
----@field restart boolean
+---@field hand_ui? string
+---@field positions? TablePositions
+---
 ---@field bet_zones table<string, Object[]>
 ---@field card_zones table<string, Object[]>
----@field hand_owners table<string, TableHandOwner>
----@field game_states? (fun(self: self): nil)[]
----@field button_count? integer
+---@field game_states (fun(self: self): nil)[]
+---@field previous_bets table<string, GameBet[]>
+---@field hand_positions table<string, GameHandPosition>
 ---
----@field startGame fun(self: self): nil
----@field editButton fun(self: self, name: string, parameters: Button.Parameters.Edit): boolean
----@field hideButton fun(self: self, name: string, label?: string): boolean
----@field showButton fun(self: self, name: string, label?: string): boolean
----@field createButton fun(self: self, name: string, parameters: Button.Parameters.Create, callback: (fun(self: self, player_color: string, alt: boolean, ...): nil), ...): number
----@field createObjects fun(self: self, positions: table<string, TablePlayerPositions>, hand_ui: string): nil
+---@field deck? Object
+---@field hands table<string, GameHand>
+---@field restart boolean
+---@field game_state integer
+---@field dealer_cards Object[]
+---@field player_cards table<string, Object[]>
+---@field community_cards Object[]
+---
+---@field constructor fun(self: self, positions: TablePositions, hand_ui?: string): nil
+---
+---[[ Game Loop ]]
+---@field start fun(self: self): nil
+---@field tick? fun(self: self): nil
+---
+---[[ Game State Functions ]]
+---@field deal fun(self: self): nil
+---@field cleanup fun(self: self): nil
+---
+---[[ Game Utility Functions ]]
+---@field findDeck fun(self: self, force?: boolean): Object?
+---@field dealCardsTo fun(self: self, positions: VectorLike[], flip?: boolean, amount?: number): Object[]
 ---@field createCoroutine fun(self: self, fn: (fun(): nil), fn_name?: string): nil
----@field clearGameObjects fun(self: self): nil
+---@field createGameObjects fun(self: self): nil
+---@field destroyGameObjects fun(self: self): nil
 ---
----@field handUILoaded? fun(self: self, color: string, hand_ui: Object): nil
+---[[ Event Handlers ]]
+---@field onHandUILoaded? fun(self: self, position: GameHandPosition): nil

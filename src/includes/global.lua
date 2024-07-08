@@ -26,7 +26,7 @@ function onPlayerChangeColor(player_color)
 
         savePlayer(player.steam_id)
 
-        if color == 'Black' then
+        if color == 'Black' or color == 'White' then
           return
         end
 

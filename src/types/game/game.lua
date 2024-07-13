@@ -27,7 +27,7 @@
 ---@class GameBet
 ---@field color string The color of the hand where the bet was placed
 ---@field steam_id string The steam id of the player who placed the bet
----@field chip_values number[] The values of the chips placed in the bet - correlates to `TablePlayerPositions.bets`
+---@field chip_values table<string, table<integer, integer>>[] The values of the chips placed in the bet - correlates to `TablePlayerPositions.bets`
 
 
 ---@class GameHandPosition
@@ -38,9 +38,17 @@
 
 
 ---@class GameHand
----@field bet GameBet
----@field player PlayerInstance
+---@field bet? GameBet
+---@field player string
 ---@field position GameHandPosition
+---@field steam_id string
+---@field all_chips? Object[][]
+
+
+---@class PlayingGameHand
+---@field hand GameHand
+---@field cards Object[]
+---@field status string
 
 
 ---@class Game : Class, Object
@@ -62,6 +70,7 @@
 ---@field game_state integer
 ---@field dealer_cards Object[]
 ---@field player_cards table<string, Object[]>
+---@field hands_playing table<string, PlayingGameHand>
 ---@field community_cards Object[]
 ---
 ---@field constructor fun(self: self, positions: TablePositions, hand_ui?: string): nil
@@ -76,10 +85,14 @@
 ---
 ---[[ Game Utility Functions ]]
 ---@field findDeck fun(self: self, force?: boolean): Object?
+---@field updateBet fun(self: self, color: string, steam_id: string, chips: table<string, Object[]>[], all_chips: Object[]): nil
 ---@field dealCardsTo fun(self: self, positions: VectorLike[], flip?: boolean, amount?: number): Object[]
 ---@field createCoroutine fun(self: self, fn: (fun(): nil), fn_name?: string): nil
+---@field updateHandOwner fun(self: self, color: string, steam_id?: string): GameHand?
 ---@field createGameObjects fun(self: self): nil
 ---@field destroyGameObjects fun(self: self): nil
 ---
 ---[[ Event Handlers ]]
 ---@field onHandUILoaded? fun(self: self, position: GameHandPosition): nil
+---@field onObjectEnterZone fun(self: self, zone: Object, object: Object): nil
+---@field onObjectLeaveZone fun(self: self, zone: Object, object: Object): nil

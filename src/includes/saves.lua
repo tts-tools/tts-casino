@@ -39,7 +39,7 @@ function findStarterBag(force)
   return nil
 end
 
----@param player PlayerInstance
+---@param player SeatedPlayer
 ---@param spawn_loc Vector
 function loadSave(player, spawn_loc)
   local save = findSave(player, spawn_loc)
@@ -48,7 +48,7 @@ function loadSave(player, spawn_loc)
   createSave(player, spawn_loc)
 end
 
----@param player PlayerInstance
+---@param player SeatedPlayer
 ---@param spawn_loc Vector
 ---@return Object?
 function findSave(player, spawn_loc)
@@ -59,7 +59,7 @@ function findSave(player, spawn_loc)
 
   for _, save in ipairs(saves) do
     for _, tag in ipairs(save.tags) do
-      if tag == ('steam-' .. player.steam_id) then
+      if tag == ('steam:' .. player.steam_id) then
         return save_bag.takeObject({
           guid = save.guid,
           smooth = false,
@@ -72,14 +72,14 @@ function findSave(player, spawn_loc)
   return nil
 end
 
----@param player PlayerInstance
+---@param player SeatedPlayer
 ---@param spawn_loc Vector
 function createSave(player, spawn_loc)
   if not findStarterBag() then return end
 
   local save = starter_bag.clone({ position = spawn_loc })
 
-  save.addTag('steam-' .. player.steam_id)
+  save.addTag('steam:' .. player.steam_id)
   save.setName(player.steam_name .. "'s Save")
 
   for _, simple_object in ipairs(save.getObjects()) do
@@ -88,17 +88,17 @@ function createSave(player, spawn_loc)
       smooth = false
     })
 
-    object.addTag('steam-' .. player.steam_id)
+    object.addTag('steam:' .. player.steam_id)
     save.putObject(object)
   end
 
   save.setLock(false)
 end
 
----@param steam_id string
+---@param player SeatedPlayer
 ---@return Object?
-function findExistingSave(steam_id)
-  local objects = getObjectsWithAllTags({ 'save', 'steam-' .. steam_id })
+function findExistingSave(player)
+  local objects = getObjectsWithAllTags({ 'save', 'steam:' .. player.steam_id })
   if not objects then return nil end
 
   for _, object in ipairs(objects) do
@@ -110,12 +110,12 @@ function findExistingSave(steam_id)
   return nil
 end
 
----@param steam_id string
-function savePlayer(steam_id)
-  local save = findExistingSave(steam_id)
+---@param player SeatedPlayer
+function savePlayer(player)
+  local save = findExistingSave(player)
   if not save then return end -- TODO: Log not found
 
-  local objects = getObjectsWithTag('steam-' .. steam_id)
+  local objects = getObjectsWithTag('steam:' .. player.steam_id)
   for _, object in ipairs(objects) do
     if object.guid ~= save.guid and not object.locked then
       save.putObject(object)

@@ -15,6 +15,7 @@ class 'Game' {
   game_state = 0,
   dealer_cards = {},
   player_cards = {},
+  hands_playing = {},
   community_cards = {},
 
   constructor = function (self, positions, hand_ui)
@@ -61,7 +62,7 @@ class 'Game' {
           return 1
         end
 
-        wait(0.5)
+        coroutine.yield()
 
         if 1 == self:tick() then
           return 1
@@ -123,6 +124,30 @@ class 'Game' {
     return nil
   end,
 
+  updateBet = function (self, color, steam_id, chips, all_chips)
+    local hand = self.hands[color]
+    if not hand then return end
+
+    local chip_values = {}
+    for index, players in ipairs(chips) do
+      chip_values[index] = {}
+
+      for player, player_chips in pairs(players) do
+        chip_values[index][player] = calculateChipValues(player_chips)
+      end
+    end
+
+    hand.bet = {
+      color = color,
+      steam_id = steam_id,
+      chip_values = chip_values,
+    }
+
+    if all_chips then
+      hand.all_chips = all_chips
+    end
+  end,
+
   dealCardsTo = function (self, positions, flip, amount)
     local cards = {}
     local count = 0
@@ -160,9 +185,28 @@ class 'Game' {
     startLuaCoroutine(base, fn_name)
   end,
 
-  createGameObjects = function (self)
-    print('create')
+  updateHandOwner = function (self, color, steam_id)
+    if not steam_id then
+      self.hands[color] = nil
 
+      return nil
+    end
+
+    local seatedPlayers = Global.getVar('SEATED_PLAYERS_STEAM') ---@type table<string, SeatedPlayer>
+
+    local seatedPlayer = seatedPlayers[steam_id]
+    if not seatedPlayer then return nil end
+
+    self.hands[color] = {
+      player = seatedPlayer.color,
+      steam_id = seatedPlayer.steam_id,
+      position = self.hand_positions[color],
+    }
+
+    return self.hands[color]
+  end,
+
+  createGameObjects = function (self)
     if not self.positions then return end
 
     for color, position in pairs(self.positions.players) do
@@ -199,7 +243,7 @@ class 'Game' {
 
       local ui_obj
       if self.hand_ui then
-        ui_obj = spawnObject({
+        ui_obj = _G.spawnObject({
           type = 'BlockSquare',
           scale = { 1.1, 0.02, 1.1 },
           sound = false,
@@ -253,7 +297,53 @@ class 'Game' {
     for _, object in ipairs(getObjectsWithTag('game-object')) do
       object.destruct()
     end
+  end,
 
-    print('destroy')
-  end
+  onObjectEnterZone = function (self, zone)
+    if zone.getVar('type') ~= 'bet' then return end
+
+    local zone_color = zone.getVar('color')
+    local chips, all_chips = findChips(self.bet_zones[zone_color])
+
+    if self.hands[zone_color] then
+      self:updateBet(zone_color, self.hands[zone_color].steam_id, chips, all_chips)
+      return
+    end
+
+    for _, chip in pairs(chips) do
+      local steam_id = next(chip)
+      if steam_id then
+        self:updateHandOwner(zone_color, steam_id)
+        self:updateBet(zone_color, steam_id, chips, all_chips)
+        break
+      end
+    end
+  end,
+
+  onObjectLeaveZone = function (self, zone)
+    if zone.getVar('type') ~= 'bet' then return end
+
+    local zone_color = zone.getVar('color')
+    if not self.hands[zone_color] then return end
+
+    local chips, all_chips = findChips(self.bet_zones[zone_color])
+
+    local new_steam_id = nil
+    local current_steam_id = self.hands[zone_color].steam_id
+
+    for _, chip in pairs(chips) do
+      local steam_id = next(chip)
+      if steam_id == current_steam_id then
+        self:updateBet(zone_color, current_steam_id, chips, all_chips)
+        return
+      end
+
+      if not new_steam_id then
+        new_steam_id = steam_id
+      end
+    end
+
+    self:updateHandOwner(zone_color, new_steam_id)
+    self:updateBet(zone_color, new_steam_id, chips, all_chips)
+  end,
 }

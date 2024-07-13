@@ -25,3 +25,14 @@ function findObject(type, position, debug)
 
   return nil
 end
+
+---@param object Object
+---@return string?
+function findSteamId(object)
+  for _, tag in ipairs(object.getTags()) do
+    local steam_id = tag:match('^steam:([0-9]+)$')
+    if steam_id then return steam_id end
+  end
+
+  return nil
+end

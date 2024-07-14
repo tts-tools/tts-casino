@@ -54,7 +54,7 @@ local ThreeCard = {
       local ante = next(playing.hand.bet.chip_values[3])
       local play = next(playing.hand.bet.chip_values[4])
 
-      if 'played' == playing.status or 'folding' == playing.status then
+      if 'folding' == playing.status then
         -- noop
       elseif (pair and not ante) or (ante and play) then
         if 'playing' ~= playing.status then
@@ -106,10 +106,10 @@ local ThreeCard = {
 
     wait(0.5)
 
-    for color, positions in pairs(self.positions.players) do
+    for color in pairs(self.positions.players) do
       local hand = self.hands[color]
       if hand and hand.all_chips and self:isBetValid(hand) then
-        local cards = self:dealCardsTo(self.positions.players[color].cards)
+        local cards = self:dealCardsTo(self.positions.players[color].cards, true)
         self.player_cards[color] = cards
         self.hands_playing[color] = {
           hand = hand,
@@ -121,7 +121,7 @@ local ThreeCard = {
 
     self.dealer_cards = self:dealCardsTo(self.positions.dealer.cards)
 
-    self.UI.setAttribute('deal_button', 'text', 'Flip')
+    self.UI.setAttribute('deal_button', 'text', 'Flip Dealer')
     self.UI.setAttribute('deal_button', 'interactable', true)
   end,
 
@@ -147,27 +147,7 @@ local ThreeCard = {
   foldHand = function (self, playing)
     if GameState.DEAL ~= self.game_state or 'folding' == playing.status then return end
 
-    playing.status = 'folding'
-
-    local hand_ui = playing.hand.position.ui
-    if hand_ui and not hand_ui.loading then
-      hand_ui.setValue('player-text', 'Folding')
-      hand_ui.setAttribute('btn-left', 'active', false)
-      hand_ui.setAttribute('btn-right', 'active', false)
-    end
-
-    for _, card in ipairs(playing.cards) do
-      local rotation = card.getRotation():copy():add({ x = 0, y = 15, z = 0 })
-      card.setRotationSmooth(rotation)
-    end
-
-    for bet_type, bet in ipairs(playing.hand.all_chips) do
-      if 2 == bet_type or 3 == bet_type then
-        for _, chip in pairs(bet) do
-          destroyObject(chip)
-        end
-      end
-    end
+    self.__super.foldHand(self, playing)
   end,
 
   isBetValid = function (self, hand)
@@ -192,32 +172,58 @@ local ThreeCard = {
     end
   end,
 
+  onFoldHand = function (self, playing)
+    if GameState.DEAL ~= self.game_state or 'folding' == playing.status then return end
+
+    playing.status = 'folding'
+
+    local hand_ui = playing.hand.position.ui
+    if hand_ui and not hand_ui.loading then
+      hand_ui.setValue('player-text', 'Folding')
+      hand_ui.setAttribute('btn-left', 'active', false)
+      hand_ui.setAttribute('btn-right', 'active', false)
+    end
+
+    for _, card in ipairs(playing.cards) do
+      local rotation = card.getRotation():copy():add({ x = 0, y = 15, z = 180 })
+      card.setRotationSmooth(rotation)
+    end
+
+    for bet_type, bet in ipairs(playing.hand.all_chips) do
+      if 2 == bet_type or 3 == bet_type then
+        for _, chip in pairs(bet) do
+          destroyObject(chip)
+        end
+      end
+    end
+  end,
+
   onHandUILoaded = function (self, position)
     position.ui.setAttribute('btn-left', 'onClick', self.__object.getGUID() .. '/' .. 'leftButtonClick(' .. position.color .. ')')
     position.ui.setAttribute('btn-right', 'onClick', self.__object.getGUID() .. '/' .. 'rightButtonClick(' .. position.color .. ')')
     position.ui.setAttribute('btn-center', 'onClick', self.__object.getGUID() .. '/' .. 'centerButtonClick(' .. position.color .. ')')
   end,
 
-  onLeftButtonClick = function (self, player_color, color)
+  onLeftButtonClick = function (self, player, color)
     -- TODO
   end,
 
-  onRightButtonClick = function (self, player_color, color)
+  onRightButtonClick = function (self, player, color)
     local playing = self.hands_playing[color]
-    if not playing or player_color ~= playing.hand.player then return end
+    if not playing or player.color ~= playing.hand.player then return end
 
     self:foldHand(playing)
   end,
 
-  onCenterButtonClick = function (self, player_color, color)
+  onCenterButtonClick = function (self, player, color)
     -- TODO
   end,
 
-  onIndicatorButtonClick = function (self, player_color, color)
+  onIndicatorButtonClick = function (self, player, color)
     if self.hands[color] then return end
 
     local position = self.hand_positions[color]
-    if position.ui.loading or position.ui.getAttribute('indicator', 'player') ~= player_color then return end
+    if position.ui.loading or (not player.admin and position.ui.getAttribute('indicator', 'player') ~= player.color) then return end
 
     position.ui.setAttribute('indicator', 'active', false)
     position.ui.setAttribute('indicator', 'player', nil)
@@ -241,27 +247,11 @@ function dealClick()
   end
 end
 
----@param zone Object
----@param object Object
-function onObjectEnterZone(zone, object)
-  if game then
-    game:onObjectEnterZone(zone, object)
-  end
-end
-
----@param zone Object
----@param object Object
-function onObjectLeaveZone(zone, object)
-  if game then
-    game:onObjectLeaveZone(zone, object)
-  end
-end
-
 ---@param player PlayerInstance
 ---@param color string
 function leftButtonClick(player, color)
   if game then
-    game:onLeftButtonClick(player.color, color)
+    game:onLeftButtonClick(player, color)
   end
 end
 
@@ -269,7 +259,7 @@ end
 ---@param color string
 function rightButtonClick(player, color)
   if game then
-    game:onRightButtonClick(player.color, color)
+    game:onRightButtonClick(player, color)
   end
 end
 
@@ -277,7 +267,7 @@ end
 ---@param color string
 function centerButtonClick(player, color)
   if game then
-    game:onCenterButtonClick(player.color, color)
+    game:onCenterButtonClick(player, color)
   end
 end
 
@@ -285,6 +275,6 @@ end
 ---@param color string
 function indicatorButtonClick(player, color)
   if game then
-    game:onIndicatorButtonClick(player.color, color)
+    game:onIndicatorButtonClick(player, color)
   end
 end

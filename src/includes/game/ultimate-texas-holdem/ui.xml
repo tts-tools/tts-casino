@@ -1,0 +1,47 @@
+<Defaults>
+  <Button fontSize="48" minWidth="250" minHeight="150" />
+
+  <Panel
+    childForceExpandWidth="false"
+    childForceExpandHeight="false"
+  />
+
+  <VerticalLayout
+    childForceExpandWidth="false"
+    childForceExpandHeight="false"
+  />
+
+  <HorizontalLayout
+    childForceExpandWidth="false"
+    childForceExpandHeight="false"
+  />
+</Defaults>
+
+<Panel
+  height="4532"
+  visibility="Admin"
+>
+  <Panel position="6070 -593 -20">
+    <Panel width="1000" height="750" rectAlignment="UpperLeft">
+      <VerticalLayout minWidth="0">
+        <HorizontalLayout padding="0 0 0 20" spacing="8">
+          <Button minWidth="150" onClick="settingsClick">
+            <Image
+              image="http://cloud-3.steamusercontent.com/ugc/2055379004133598702/ADCD9DD2C5A288E45E8CFD45ABED188518E9A25F/"
+              width="80"
+              height="80"
+            />
+          </Button>
+
+          <Button id="deal_button" onClick="dealClick">Deal</Button>
+        </HorizontalLayout>
+
+        <VerticalScrollView
+          id="settings"
+          minWidth="800"
+          minHeight="700"
+        />
+      </VerticalLayout>
+    </Panel>
+  </Panel>
+</Panel>

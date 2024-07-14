@@ -1,7 +1,7 @@
 require('utils.misc')
 
 CHIP_BASE = {
-  Name = 'Custom_Model',
+  Name = 'Custom_Model_Stack',
   Transform = {
     rotX = 0,
     rotY = 0,

@@ -1,0 +1,671 @@
+{
+  "GUID": "3c751a",
+  "Name": "Custom_Model",
+  "Transform": {
+    "posX": 0,
+    "posY": 1,
+    "posZ": 0,
+    "rotX": 0,
+    "rotY": 180,
+    "rotZ": 0,
+    "scaleX": 1,
+    "scaleY": 0.01,
+    "scaleZ": 1
+  },
+  "Nickname": "Ultimate Texas Hold'em",
+  "Description": "",
+  "GMNotes": "",
+  "AltLookAngle": {
+    "x": 0,
+    "y": 180,
+    "z": 0
+  },
+  "ColorDiffuse": {
+    "r": 1,
+    "g": 1,
+    "b": 1
+  },
+  "LayoutGroupSortIndex": 0,
+  "Value": 0,
+  "Locked": true,
+  "Grid": false,
+  "Snap": false,
+  "IgnoreFoW": false,
+  "MeasureMovement": false,
+  "DragSelectable": false,
+  "Autoraise": true,
+  "Sticky": true,
+  "Tooltip": false,
+  "GridProjection": false,
+  "HideWhenFaceDown": false,
+  "Hands": false,
+  "CustomMesh": {
+    "MeshURL": "http://cloud-3.steamusercontent.com/ugc/2508023918742198305/5335C773299A911FEDABE6FA995B162124975471/",
+    "DiffuseURL": "http://cloud-3.steamusercontent.com/ugc/2505773475722360797/FED06B339AECE8602A63869ADF56DC156A696725/",
+    "NormalURL": "",
+    "ColliderURL": "http://cloud-3.steamusercontent.com/ugc/2508023918742198305/5335C773299A911FEDABE6FA995B162124975471/",
+    "Convex": false,
+    "MaterialIndex": 1,
+    "TypeIndex": 4,
+    "CastShadows": true
+  },
+  "AttachedSnapPoints": [
+    {
+      "Position": {
+        "x": -49.21,
+        "y": 0.1,
+        "z": -3.5
+      },
+      "Rotation": {
+        "x": 0,
+        "y": 180,
+        "z": 0
+      }
+    },
+    {
+      "Position": {
+        "x": -46.21,
+        "y": 0.1,
+        "z": -3.5
+      },
+      "Rotation": {
+        "x": 0,
+        "y": 180,
+        "z": 0
+      }
+    },
+
+    {
+      "Position": {
+        "x": -33.3,
+        "y": 0.1,
+        "z": -11.16
+      },
+      "Rotation": {
+        "x": 0,
+        "y": 180,
+        "z": 0
+      }
+    },
+    {
+      "Position": {
+        "x": -30.3,
+        "y": 0.1,
+        "z": -11.16
+      },
+      "Rotation": {
+        "x": 0,
+        "y": 180,
+        "z": 0
+      }
+    },
+
+    {
+      "Position": {
+        "x": -17.39,
+        "y": 0.1,
+        "z": -16.66
+      },
+      "Rotation": {
+        "x": 0,
+        "y": 180,
+        "z": 0
+      }
+    },
+    {
+      "Position": {
+        "x": -14.39,
+        "y": 0.1,
+        "z": -16.66
+      },
+      "Rotation": {
+        "x": 0,
+        "y": 180,
+        "z": 0
+      }
+    },
+
+    {
+      "Position": {
+        "x": -1.5,
+        "y": 0.1,
+        "z": -16.66
+      },
+      "Rotation": {
+        "x": 0,
+        "y": 180,
+        "z": 0
+      }
+    },
+    {
+      "Position": {
+        "x": 1.5,
+        "y": 0.1,
+        "z": -16.66
+      },
+      "Rotation": {
+        "x": 0,
+        "y": 180,
+        "z": 0
+      }
+    },
+
+    {
+      "Position": {
+        "x": 14.39,
+        "y": 0.1,
+        "z": -16.66
+      },
+      "Rotation": {
+        "x": 0,
+        "y": 180,
+        "z": 0
+      }
+    },
+    {
+      "Position": {
+        "x": 17.39,
+        "y": 0.1,
+        "z": -16.66
+      },
+      "Rotation": {
+        "x": 0,
+        "y": 180,
+        "z": 0
+      }
+    },
+
+    {
+      "Position": {
+        "x": 30.3,
+        "y": 0.1,
+        "z": -11.16
+      },
+      "Rotation": {
+        "x": 0,
+        "y": 180,
+        "z": 0
+      }
+    },
+    {
+      "Position": {
+        "x": 33.3,
+        "y": 0.1,
+        "z": -11.16
+      },
+      "Rotation": {
+        "x": 0,
+        "y": 180,
+        "z": 0
+      }
+    },
+
+    {
+      "Position": {
+        "x": 46.21,
+        "y": 0.1,
+        "z": -3.5
+      },
+      "Rotation": {
+        "x": 0,
+        "y": 180,
+        "z": 0
+      }
+    },
+    {
+      "Position": {
+        "x": 49.21,
+        "y": 0.1,
+        "z": -3.5
+      },
+      "Rotation": {
+        "x": 0,
+        "y": 180,
+        "z": 0
+      }
+    },
+
+
+    {
+      "Position": {
+        "x": -1.5,
+        "y": 0.1,
+        "z": 14.61
+      },
+      "Rotation": {
+        "x": 0,
+        "y": 180,
+        "z": 0
+      }
+    },
+    {
+      "Position": {
+        "x": 1.5,
+        "y": 0.1,
+        "z": 14.61
+      },
+      "Rotation": {
+        "x": 0,
+        "y": 180,
+        "z": 0
+      }
+    },
+
+    {
+      "Position": {
+        "x": -6,
+        "y": 0.1,
+        "z": 4.34
+      },
+      "Rotation": {
+        "x": 0,
+        "y": 180,
+        "z": 0
+      }
+    },
+    {
+      "Position": {
+        "x": -3,
+        "y": 0.1,
+        "z": 4.34
+      },
+      "Rotation": {
+        "x": 0,
+        "y": 180,
+        "z": 0
+      }
+    },
+    {
+      "Position": {
+        "x": 0,
+        "y": 0.1,
+        "z": 4.34
+      },
+      "Rotation": {
+        "x": 0,
+        "y": 180,
+        "z": 0
+      }
+    },
+    {
+      "Position": {
+        "x": 3,
+        "y": 0.1,
+        "z": 4.34
+      },
+      "Rotation": {
+        "x": 0,
+        "y": 180,
+        "z": 0
+      }
+    },
+    {
+      "Position": {
+        "x": 6,
+        "y": 0.1,
+        "z": 4.34
+      },
+      "Rotation": {
+        "x": 0,
+        "y": 180,
+        "z": 0
+      }
+    },
+
+    {
+      "Position": {
+        "x": 8.96,
+        "y": 0.1,
+        "z": 14.61
+      },
+      "Rotation": {
+        "x": 0,
+        "y": 180,
+        "z": 0
+      }
+    },
+
+    {
+      "Position": {
+        "x": -49.74,
+        "y": 0.1,
+        "z": 9.33
+      },
+      "Rotation": {
+        "x": 0,
+        "y": 180,
+        "z": 0
+      }
+    },
+    {
+      "Position": {
+        "x": -49.74,
+        "y": 0.1,
+        "z": 5.52
+      },
+      "Rotation": {
+        "x": 0,
+        "y": 180,
+        "z": 0
+      }
+    },
+    {
+      "Position": {
+        "x": -45.66,
+        "y": 0.1,
+        "z": 5.52
+      },
+      "Rotation": {
+        "x": 0,
+        "y": 180,
+        "z": 0
+      }
+    },
+    {
+      "Position": {
+        "x": -49.74,
+        "y": 0.1,
+        "z": 2.17
+      },
+      "Rotation": {
+        "x": 0,
+        "y": 180,
+        "z": 0
+      }
+    },
+
+    {
+      "Position": {
+        "x": -33.83,
+        "y": 0.1,
+        "z": 1.69
+      },
+      "Rotation": {
+        "x": 0,
+        "y": 180,
+        "z": 0
+      }
+    },
+    {
+      "Position": {
+        "x": -33.83,
+        "y": 0.1,
+        "z": -2.12
+      },
+      "Rotation": {
+        "x": 0,
+        "y": 180,
+        "z": 0
+      }
+    },
+    {
+      "Position": {
+        "x": -29.75,
+        "y": 0.1,
+        "z": -2.12
+      },
+      "Rotation": {
+        "x": 0,
+        "y": 180,
+        "z": 0
+      }
+    },
+    {
+      "Position": {
+        "x": -33.83,
+        "y": 0.1,
+        "z": -5.47
+      },
+      "Rotation": {
+        "x": 0,
+        "y": 180,
+        "z": 0
+      }
+    },
+
+    {
+      "Position": {
+        "x": -17.93,
+        "y": 0.1,
+        "z": -3.82
+      },
+      "Rotation": {
+        "x": 0,
+        "y": 180,
+        "z": 0
+      }
+    },
+    {
+      "Position": {
+        "x": -17.93,
+        "y": 0.1,
+        "z": -7.63
+      },
+      "Rotation": {
+        "x": 0,
+        "y": 180,
+        "z": 0
+      }
+    },
+    {
+      "Position": {
+        "x": -13.85,
+        "y": 0.1,
+        "z": -7.63
+      },
+      "Rotation": {
+        "x": 0,
+        "y": 180,
+        "z": 0
+      }
+    },
+    {
+      "Position": {
+        "x": -17.93,
+        "y": 0.1,
+        "z": -10.98
+      },
+      "Rotation": {
+        "x": 0,
+        "y": 180,
+        "z": 0
+      }
+    },
+
+    {
+      "Position": {
+        "x": -2.04,
+        "y": 0.1,
+        "z": -3.82
+      },
+      "Rotation": {
+        "x": 0,
+        "y": 180,
+        "z": 0
+      }
+    },
+    {
+      "Position": {
+        "x": -2.04,
+        "y": 0.1,
+        "z": -7.63
+      },
+      "Rotation": {
+        "x": 0,
+        "y": 180,
+        "z": 0
+      }
+    },
+    {
+      "Position": {
+        "x": 2.04,
+        "y": 0.1,
+        "z": -7.63
+      },
+      "Rotation": {
+        "x": 0,
+        "y": 180,
+        "z": 0
+      }
+    },
+    {
+      "Position": {
+        "x": -2.04,
+        "y": 0.1,
+        "z": -10.98
+      },
+      "Rotation": {
+        "x": 0,
+        "y": 180,
+        "z": 0
+      }
+    },
+
+    {
+      "Position": {
+        "x": 13.85,
+        "y": 0.1,
+        "z": -3.82
+      },
+      "Rotation": {
+        "x": 0,
+        "y": 180,
+        "z": 0
+      }
+    },
+    {
+      "Position": {
+        "x": 13.85,
+        "y": 0.1,
+        "z": -7.63
+      },
+      "Rotation": {
+        "x": 0,
+        "y": 180,
+        "z": 0
+      }
+    },
+    {
+      "Position": {
+        "x": 17.93,
+        "y": 0.1,
+        "z": -7.63
+      },
+      "Rotation": {
+        "x": 0,
+        "y": 180,
+        "z": 0
+      }
+    },
+    {
+      "Position": {
+        "x": 13.85,
+        "y": 0.1,
+        "z": -10.98
+      },
+      "Rotation": {
+        "x": 0,
+        "y": 180,
+        "z": 0
+      }
+    },
+
+    {
+      "Position": {
+        "x": 29.75,
+        "y": 0.1,
+        "z": 1.69
+      },
+      "Rotation": {
+        "x": 0,
+        "y": 180,
+        "z": 0
+      }
+    },
+    {
+      "Position": {
+        "x": 29.75,
+        "y": 0.1,
+        "z": -2.12
+      },
+      "Rotation": {
+        "x": 0,
+        "y": 180,
+        "z": 0
+      }
+    },
+    {
+      "Position": {
+        "x": 33.83,
+        "y": 0.1,
+        "z": -2.12
+      },
+      "Rotation": {
+        "x": 0,
+        "y": 180,
+        "z": 0
+      }
+    },
+    {
+      "Position": {
+        "x": 29.75,
+        "y": 0.1,
+        "z": -5.47
+      },
+      "Rotation": {
+        "x": 0,
+        "y": 180,
+        "z": 0
+      }
+    },
+
+    {
+      "Position": {
+        "x": 45.66,
+        "y": 0.1,
+        "z": 9.33
+      },
+      "Rotation": {
+        "x": 0,
+        "y": 180,
+        "z": 0
+      }
+    },
+    {
+      "Position": {
+        "x": 45.66,
+        "y": 0.1,
+        "z": 5.52
+      },
+      "Rotation": {
+        "x": 0,
+        "y": 180,
+        "z": 0
+      }
+    },
+    {
+      "Position": {
+        "x": 49.74,
+        "y": 0.1,
+        "z": 5.52
+      },
+      "Rotation": {
+        "x": 0,
+        "y": 180,
+        "z": 0
+      }
+    },
+    {
+      "Position": {
+        "x": 45.66,
+        "y": 0.1,
+        "z": 2.17
+      },
+      "Rotation": {
+        "x": 0,
+        "y": 180,
+        "z": 0
+      }
+    }
+  ]
+}

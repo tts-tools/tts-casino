@@ -3,6 +3,9 @@ require('utils.strings')
 
 local base = self
 
+---@type Game?
+local game = nil
+
 class 'Game' {
   bet_zones = {},
   card_zones = {},
@@ -19,10 +22,14 @@ class 'Game' {
   community_cards = {},
 
   constructor = function (self, positions, hand_ui)
+    game = self
+
     self.hand_ui = hand_ui
     self.positions = positions
 
     self:createGameObjects()
+
+    Global.setVar('game', self.__object.guid)
   end,
 
   start = function (self)
@@ -122,6 +129,17 @@ class 'Game' {
     end
 
     return nil
+  end,
+
+  foldHand = function (self, playing)
+    if not self.onFoldHand then return end
+
+    local player = Player[playing.hand.player] ---@type PlayerInstance?
+    if not player then return end
+
+    player.showConfirmDialog('Are you sure you want to fold?', function (player_color)
+      self:onFoldHand(playing)
+    end)
   end,
 
   updateBet = function (self, color, steam_id, chips, all_chips)
@@ -224,7 +242,7 @@ class 'Game' {
         self.bet_zones[color][index].setVar('type', 'bet')
         self.bet_zones[color][index].setVar('color', color)
         self.bet_zones[color][index].setVar('index', index)
-        self.bet_zones[color][index].setTags({ 'chip', 'game-object' })
+        self.bet_zones[color][index].setTags({ 'chip', 'game-object', self.__name .. ':game-object' })
       end
 
       for index, card_position in ipairs(position.cards) do
@@ -235,7 +253,7 @@ class 'Game' {
           position = self.positionToWorld({ card_position[1], 200, card_position[3] }),
         })
 
-        self.card_zones[color][index].addTag('game-object')
+        self.card_zones[color][index].setTags({ 'game-object', self.__name .. ':game-object' })
         self.card_zones[color][index].setVar('type', 'bet')
         self.card_zones[color][index].setVar('color', color)
         self.card_zones[color][index].setVar('index', index)
@@ -252,7 +270,7 @@ class 'Game' {
         })
 
         ui_obj.UI.setXml(self.hand_ui)
-        ui_obj.addTag('game-object')
+        ui_obj.setTags({ 'game-object', self.__name .. ':game-object' })
         ui_obj.setLock(true)
         ui_obj.setColorTint({ 0, 0, 0, 0 })
       end
@@ -294,9 +312,45 @@ class 'Game' {
   end,
 
   destroyGameObjects = function (self)
-    for _, object in ipairs(getObjectsWithTag('game-object')) do
+    for _, object in ipairs(getObjectsWithTag(self.__name .. ':game-object')) do
       object.destruct()
     end
+  end,
+
+  onPayout = function (self, params)
+    local player = Player[params.player_color] ---@type PlayerInstance
+    if not player or (not player.admin and not player.promoted) then return end
+
+    player.showInputDialog('Payout', '1', function (text, player_color)
+      local payout = tonumber(text)
+      if not payout then return end
+
+      local selected = player.getSelectedObjects()
+
+      local chips = {} ---@type Object[]
+      for _, object in ipairs(selected) do
+        if object.type == 'Chip' and object.hasTag('chip') then
+          table.insert(chips, object)
+        end
+      end
+
+      for index, chip in ipairs(chips) do
+        index = index - 1
+
+        local chip_json = JSON.decode(chip.getJSON(false))
+
+        local count = (chip_json['Number'] or 1) * payout
+        chip_json['Number'] = count
+        chip_json['Name'] = count == 1 and 'Custom_Model' or 'Custom_Model_Stack'
+        chip_json['Transform']['posX'] = params.position[1] - index * 2.5
+        chip_json['Transform']['posY'] = params.position[2]
+        chip_json['Transform']['posZ'] = params.position[3]
+
+        spawnObjectJSON({
+          json = JSON.encode(chip_json)
+        })
+      end
+    end)
   end,
 
   onObjectEnterZone = function (self, zone)
@@ -347,3 +401,26 @@ class 'Game' {
     self:updateBet(zone_color, new_steam_id, chips, all_chips)
   end,
 }
+
+---@param zone Object
+---@param object Object
+function onObjectEnterZone(zone, object)
+  if game then
+    game:onObjectEnterZone(zone, object)
+  end
+end
+
+---@param zone Object
+---@param object Object
+function onObjectLeaveZone(zone, object)
+  if game then
+    game:onObjectLeaveZone(zone, object)
+  end
+end
+
+---@param params PayoutParams
+function onPayout(params)
+  if game then
+    game:onPayout(params)
+  end
+end

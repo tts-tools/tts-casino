@@ -25,6 +25,19 @@ function onLoad()
       SEATED_PLAYERS_STEAM[player.steam_id] = seated_player
     end
   end
+
+  addHotkey('Payout', function (player_color, _, pointer_position, is_key_up)
+    if not is_key_up then return end
+
+    local game_guid = self.getVar('game')
+    local game = getObjectFromGUID(game_guid)
+    if not game then return end
+
+    game.call('onPayout', {
+      position = pointer_position,
+      player_color = player_color,
+    })
+  end, true)
 end
 
 ---@param player_color string

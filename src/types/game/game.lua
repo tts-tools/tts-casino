@@ -24,6 +24,11 @@
 ---@alias ColorDetails table<string, ColorDetail>
 
 
+---@class PayoutParams
+---@field position Vector
+---@field player_color string
+
+
 ---@class GameBet
 ---@field color string The color of the hand where the bet was placed
 ---@field steam_id string The steam id of the player who placed the bet
@@ -85,6 +90,7 @@
 ---
 ---[[ Game Utility Functions ]]
 ---@field findDeck fun(self: self, force?: boolean): Object?
+---@field foldHand fun(self: self, playing: PlayingGameHand): nil
 ---@field updateBet fun(self: self, color: string, steam_id: string, chips: table<string, Object[]>[], all_chips: Object[]): nil
 ---@field dealCardsTo fun(self: self, positions: VectorLike[], flip?: boolean, amount?: number): Object[]
 ---@field createCoroutine fun(self: self, fn: (fun(): nil), fn_name?: string): nil
@@ -93,6 +99,8 @@
 ---@field destroyGameObjects fun(self: self): nil
 ---
 ---[[ Event Handlers ]]
+---@field onPayout fun(self: self, params: PayoutParams): nil
+---@field onFoldHand? fun(self: self, playing: PlayingGameHand): nil
 ---@field onHandUILoaded? fun(self: self, position: GameHandPosition): nil
 ---@field onObjectEnterZone fun(self: self, zone: Object, object: Object): nil
 ---@field onObjectLeaveZone fun(self: self, zone: Object, object: Object): nil

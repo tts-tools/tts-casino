@@ -1,3 +1,0 @@
-function onLoad()
-  print('Load: ' .. self.getName())
-end

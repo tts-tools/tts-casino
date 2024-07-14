@@ -1,5 +1,5 @@
 ---@type TablePositions
-local THREE_CARD_POSITIONS = {
+return {
   deck = { 8.96, -1, 14.61 },
 
   dealer = {
@@ -131,5 +131,3 @@ local THREE_CARD_POSITIONS = {
     },
   }
 }
-
-return THREE_CARD_POSITIONS

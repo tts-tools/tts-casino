@@ -24,8 +24,9 @@
 ---@field updateHandOwner fun(self: self, color: string, steam_id: string): nil
 ---
 ---[[ Event Handlers ]]
+---@field onFoldHand fun(self: self, playing: PlayingGameHand): nil
 ---@field onHandUILoaded fun(self: self, position: GameHandPosition): nil
----@field onLeftButtonClick fun(self: self, player_color: string, color: string): nil
----@field onRightButtonClick fun(self: self, player_color: string, color: string): nil
----@field onCenterButtonClick fun(self: self, player_color: string, color: string): nil
----@field onIndicatorButtonClick fun(self: self, player_color: string, color: string): nil
+---@field onLeftButtonClick fun(self: self, player: PlayerInstance, color: string): nil
+---@field onRightButtonClick fun(self: self, player: PlayerInstance, color: string): nil
+---@field onCenterButtonClick fun(self: self, player: PlayerInstance, color: string): nil
+---@field onIndicatorButtonClick fun(self: self, player: PlayerInstance, color: string): nil

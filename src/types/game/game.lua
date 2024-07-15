@@ -17,13 +17,6 @@
 ---@field players table<string, TablePlayerPositions>
 
 
----@class ColorDetail
----@field scripting_zone string
-
-
----@alias ColorDetails table<string, ColorDetail>
-
-
 ---@class PayoutParams
 ---@field position Vector
 ---@field player_color string
@@ -32,7 +25,7 @@
 ---@class GameBet
 ---@field color string The color of the hand where the bet was placed
 ---@field steam_id string The steam id of the player who placed the bet
----@field chip_values table<string, table<integer, integer>>[] The values of the chips placed in the bet - correlates to `TablePlayerPositions.bets`
+---@field chip_counts table<string, table<integer, integer>>[] The counts of the chips placed in the bet - correlates to `TablePlayerPositions.bets`
 
 
 ---@class GameHandPosition

@@ -54,7 +54,7 @@ local UltimateTexasHoldem = {
 
   updateBetStatus = function (self)
     for color, playing in pairs(self.hands_playing) do
-      local play = next(playing.hand.bet.chip_values[4])
+      local play = next(playing.hand.bet.chip_counts[4])
 
       if 'folding' == playing.status then
         -- noop
@@ -187,10 +187,10 @@ local UltimateTexasHoldem = {
   end,
 
   isBetValid = function (self, hand)
-    local ante = next(hand.bet.chip_values[2])
+    local ante = next(hand.bet.chip_counts[2])
     if not ante then return false end
 
-    local blind = next(hand.bet.chip_values[3])
+    local blind = next(hand.bet.chip_counts[3])
     return blind ~= nil
   end,
 

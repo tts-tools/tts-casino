@@ -146,19 +146,19 @@ class 'Game' {
     local hand = self.hands[color]
     if not hand then return end
 
-    local chip_values = {}
+    local chip_counts = {}
     for index, players in ipairs(chips) do
-      chip_values[index] = {}
+      chip_counts[index] = {}
 
       for player, player_chips in pairs(players) do
-        chip_values[index][player] = calculateChipValues(player_chips)
+        chip_counts[index][player] = calculateChipCounts(player_chips)
       end
     end
 
     hand.bet = {
       color = color,
       steam_id = steam_id,
-      chip_values = chip_values,
+      chip_counts = chip_counts,
     }
 
     if all_chips then

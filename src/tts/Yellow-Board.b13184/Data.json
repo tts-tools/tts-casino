@@ -4,9 +4,9 @@
   "Transform": {
     "posX": 31.8,
     "posY": 1,
-    "posZ": 0,
+    "posZ": 61.32,
     "rotX": 0,
-    "rotY": 0,
+    "rotY": 180,
     "rotZ": 0,
     "scaleX": 1,
     "scaleY": 1,
@@ -41,7 +41,7 @@
   "Hands": false,
   "CustomMesh": {
     "MeshURL": "http://cloud-3.steamusercontent.com/ugc/2508023918742235571/064D0123D7CDCA08EC95A27634C6D53E88EF44AD/",
-    "DiffuseURL": "http://cloud-3.steamusercontent.com/ugc/2508023918742234488/0F21FD81E83C6F9464918EDD2BD1066E1A1417B4/",
+    "DiffuseURL": "http://cloud-3.steamusercontent.com/ugc/2505773475728751771/B386E2F010B32D0B647ECB0C146AF22333C04971/",
     "NormalURL": "",
     "ColliderURL": "http://cloud-3.steamusercontent.com/ugc/2508023918742235571/064D0123D7CDCA08EC95A27634C6D53E88EF44AD/",
     "Convex": false,

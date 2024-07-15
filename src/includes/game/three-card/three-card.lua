@@ -50,9 +50,9 @@ local ThreeCard = {
 
   updateBetStatus = function (self)
     for color, playing in pairs(self.hands_playing) do
-      local pair = next(playing.hand.bet.chip_values[1])
-      local ante = next(playing.hand.bet.chip_values[3])
-      local play = next(playing.hand.bet.chip_values[4])
+      local pair = next(playing.hand.bet.chip_counts[1])
+      local ante = next(playing.hand.bet.chip_counts[3])
+      local play = next(playing.hand.bet.chip_counts[4])
 
       if 'folding' == playing.status then
         -- noop
@@ -151,10 +151,10 @@ local ThreeCard = {
   end,
 
   isBetValid = function (self, hand)
-    local pair_plus = next(hand.bet.chip_values[1])
+    local pair_plus = next(hand.bet.chip_counts[1])
     if pair_plus then return true end
 
-    local ante = next(hand.bet.chip_values[3])
+    local ante = next(hand.bet.chip_counts[3])
     return ante ~= nil
   end,
 

@@ -5,9 +5,6 @@
   "2": {
     "path": "./2-Three Card Poker.b867d3"
   },
-  "3": {
-    "path": "./3-Mississippi Stud.a64856"
-  },
   "4": {
     "path": "./4-Let it Ride.654c54"
   },
@@ -19,6 +16,9 @@
   },
   "7": {
     "path": "./7-Wild 5 Poker.c36e75"
+  },
+  "8": {
+    "path": "./8-Ultimate Texas Hold'em.3c751a"
   },
   "9": {
     "path": "./9-Pai Gow Poker.761169"

@@ -27,7 +27,7 @@
         <HorizontalLayout padding="0 0 0 20" spacing="8">
           <Button minWidth="150" onClick="settingsClick">
             <Image
-              image="http://cloud-3.steamusercontent.com/ugc/2055379004133598702/ADCD9DD2C5A288E45E8CFD45ABED188518E9A25F/"
+              image="https://steamusercontent-a.akamaihd.net/ugc/2055379004133598702/ADCD9DD2C5A288E45E8CFD45ABED188518E9A25F/"
               width="80"
               height="80"
             />

@@ -5,7 +5,7 @@
     "posX": -4.599559,
     "posY": 1.91749978,
     "posZ": -25.9118176,
-    "rotX": -0.000005285146,
+    "rotX": -0.00000528514965,
     "rotY": 0.008595203,
     "rotZ": 5.68543754e-8,
     "scaleX": 0.7499998,
@@ -21,9 +21,9 @@
     "z": 0
   },
   "ColorDiffuse": {
-    "r": 0.345091343,
+    "r": 0.3450911,
     "g": 0.58431375,
-    "b": 0.239208966
+    "b": 0.239208728
   },
   "Tags": [
     "chip"
@@ -45,10 +45,10 @@
   "MaterialIndex": -1,
   "MeshIndex": -1,
   "CustomMesh": {
-    "MeshURL": "http://cloud-3.steamusercontent.com/ugc/2056504269108417190/4C648ECC9AEF8EF9E43A28426CC52ED630B1F4EB/",
-    "DiffuseURL": "http://cloud-3.steamusercontent.com/ugc/2056504269108417272/B28CCCE6A1F726E194EE5BC996B160E08E6584B9/",
+    "MeshURL": "https://steamusercontent-a.akamaihd.net/ugc/2056504269108417190/4C648ECC9AEF8EF9E43A28426CC52ED630B1F4EB/",
+    "DiffuseURL": "https://steamusercontent-a.akamaihd.net/ugc/2056504269108417272/B28CCCE6A1F726E194EE5BC996B160E08E6584B9/",
     "NormalURL": "",
-    "ColliderURL": "http://cloud-3.steamusercontent.com/ugc/2056504269108417355/5D8F9BF63A7F6A75B5D0FAA7A4372E968720996D/",
+    "ColliderURL": "https://steamusercontent-a.akamaihd.net/ugc/2056504269108417355/5D8F9BF63A7F6A75B5D0FAA7A4372E968720996D/",
     "Convex": true,
     "MaterialIndex": 2,
     "TypeIndex": 7,

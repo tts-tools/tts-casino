@@ -22,7 +22,7 @@
   },
   "ColorDiffuse": {
     "r": 0.960784256,
-    "g": 0.25489527,
+    "g": 0.254895031,
     "b": 0.02745098
   },
   "Tags": [
@@ -45,10 +45,10 @@
   "MaterialIndex": -1,
   "MeshIndex": -1,
   "CustomMesh": {
-    "MeshURL": "http://cloud-3.steamusercontent.com/ugc/2056504269108417190/4C648ECC9AEF8EF9E43A28426CC52ED630B1F4EB/",
-    "DiffuseURL": "http://cloud-3.steamusercontent.com/ugc/2056504269108417272/B28CCCE6A1F726E194EE5BC996B160E08E6584B9/",
+    "MeshURL": "https://steamusercontent-a.akamaihd.net/ugc/2056504269108417190/4C648ECC9AEF8EF9E43A28426CC52ED630B1F4EB/",
+    "DiffuseURL": "https://steamusercontent-a.akamaihd.net/ugc/2056504269108417272/B28CCCE6A1F726E194EE5BC996B160E08E6584B9/",
     "NormalURL": "",
-    "ColliderURL": "http://cloud-3.steamusercontent.com/ugc/2056504269108417355/5D8F9BF63A7F6A75B5D0FAA7A4372E968720996D/",
+    "ColliderURL": "https://steamusercontent-a.akamaihd.net/ugc/2056504269108417355/5D8F9BF63A7F6A75B5D0FAA7A4372E968720996D/",
     "Convex": true,
     "MaterialIndex": 2,
     "TypeIndex": 7,

@@ -21,7 +21,7 @@
     "z": 0
   },
   "ColorDiffuse": {
-    "r": 0.09411483,
+    "r": 0.09411458,
     "g": 0.517647,
     "b": 0.450980365
   },
@@ -40,10 +40,10 @@
   "HideWhenFaceDown": false,
   "Hands": false,
   "CustomMesh": {
-    "MeshURL": "http://cloud-3.steamusercontent.com/ugc/2508023918742235571/064D0123D7CDCA08EC95A27634C6D53E88EF44AD/",
-    "DiffuseURL": "http://cloud-3.steamusercontent.com/ugc/2505773475728751771/B386E2F010B32D0B647ECB0C146AF22333C04971/",
+    "MeshURL": "https://steamusercontent-a.akamaihd.net/ugc/2508023918742235571/064D0123D7CDCA08EC95A27634C6D53E88EF44AD/",
+    "DiffuseURL": "https://steamusercontent-a.akamaihd.net/ugc/2505773475728751771/B386E2F010B32D0B647ECB0C146AF22333C04971/",
     "NormalURL": "",
-    "ColliderURL": "http://cloud-3.steamusercontent.com/ugc/2508023918742235571/064D0123D7CDCA08EC95A27634C6D53E88EF44AD/",
+    "ColliderURL": "https://steamusercontent-a.akamaihd.net/ugc/2508023918742235571/064D0123D7CDCA08EC95A27634C6D53E88EF44AD/",
     "Convex": false,
     "MaterialIndex": 1,
     "TypeIndex": 4,

@@ -68,7 +68,7 @@ end
 function calculatePlayerChips()
   while true do
     for color, player in pairs(SEATED_PLAYERS) do
-      local board = POSITIONS[color].board
+      local board = POSITIONS[color] and POSITIONS[color].board
       if board then
         local chips = getObjectsWithAllTags({ 'chip', 'steam:' .. player.steam_id })
         local chip_counts = calculateChipCounts(chips)

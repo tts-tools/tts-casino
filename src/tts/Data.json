@@ -1,8 +1,8 @@
 {
   "SaveName": "Casino",
-  "EpochTime": 1720926614,
-  "Date": "7/14/2024 3:10:14 PM",
-  "VersionNumber": "v13.2.2",
+  "EpochTime": 1722486164,
+  "Date": "8/1/2024 4:22:44 PM",
+  "VersionNumber": "v13.3",
   "GameMode": "Casino",
   "GameType": "",
   "GameComplexity": "",
@@ -214,6 +214,18 @@
       {
         "displayed": "game-object",
         "normalized": "game-object"
+      },
+      {
+        "displayed": "UltimateTexasHoldem:game-object",
+        "normalized": "ultimatetexasholdem:game-object"
+      },
+      {
+        "displayed": "ThreeCard:game-object",
+        "normalized": "threecard:game-object"
+      },
+      {
+        "displayed": "steam:76561198088056255",
+        "normalized": "steam:76561198088056255"
       }
     ]
   },
@@ -232,7 +244,7 @@
     {
       "Type": 0,
       "Name": "Settings",
-      "URL": "http://cloud-3.steamusercontent.com/ugc/2055379004133598702/ADCD9DD2C5A288E45E8CFD45ABED188518E9A25F/"
+      "URL": "https://steamusercontent-a.akamaihd.net/ugc/2055379004133598702/ADCD9DD2C5A288E45E8CFD45ABED188518E9A25F/"
     }
   ]
 }

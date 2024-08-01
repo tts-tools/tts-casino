@@ -1,6 +1,6 @@
-<Text id="total" active="false" color="white" fontSize="64" offsetXY="4300 -1350" alignment="UpperLeft" rectAlignment="LowerRight">Total: $0</Text>
+<Text id="total" active="false" color="white" fontSize="48" offsetXY="4270 -1320" alignment="UpperLeft" rectAlignment="LowerRight">Total: $0</Text>
 
-<Text color="white" fontSize="64" offsetXY="-445 1555">Chip Exchange</Text>
+<Text color="white" fontSize="48" offsetXY="-490 1555">Chip Exchange</Text>
 
 <Button id="btn-trade-up" width="350" height="92" offsetXY="130 1040" fontSize="48" fontStyle="bold">Trade Up</Button>
 <Button id="btn-trade-down" width="350" height="92" offsetXY="491 1040" fontSize="48" fontStyle="bold">Trade Down</Button>

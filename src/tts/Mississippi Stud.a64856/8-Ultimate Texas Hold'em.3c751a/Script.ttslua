@@ -1,1 +1,1 @@
-require('game.ultimate-texas-holdem.ultimate-texas-holdem')
+require("game.ultimate-texas-holdem.ultimate-texas-holdem")

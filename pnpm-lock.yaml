@@ -18,8 +18,8 @@ importers:
         specifier: ^3.3.2
         version: 3.3.2
       tts-dev-helper:
-        specifier: ^0.1.5
-        version: 0.1.5
+        specifier: ^0.1.7
+        version: 0.1.7
     devDependencies:
       '@types/fs-extra':
         specifier: ^11.0.4
@@ -47,8 +47,8 @@ packages:
   '@types/jsonfile@6.1.4':
     resolution: {integrity: sha512-D5qGUYwjvnNNextdU59/+fI+spnwtTFmyQP0h+PfIOSkNfpU6AOICUOkm4i0OnSk+NyjdPJrxCDro0sJsWlRpQ==}
 
-  '@types/node@20.14.9':
-    resolution: {integrity: sha512-06OCtnTXtWOZBJlRApleWndH4JsRVs1pDCc8dLSQp+7PpUpX3ePdHyeNSFTeSe7FtKyQkrlPvHwJOW3SLd8Oyg==}
+  '@types/node@22.1.0':
+    resolution: {integrity: sha512-AOmuRF0R2/5j1knA3c6G3HOk523Ga+l+ZXltX8SF1+5oqcXijjfTd8fY3XRZqSihEu9XhtQnKYLmkFaoxgsJHw==}
 
   big.js@6.2.1:
     resolution: {integrity: sha512-bCtHMwL9LeDIozFn+oNhhFoq+yQ3BNdnsLSASUxLciOb1vgvpHsIO1dsENiGMgbb4SkP5TrzWzRiLddn8ahVOQ==}
@@ -156,8 +156,8 @@ packages:
   lodash@4.17.21:
     resolution: {integrity: sha512-v2kDEe57lecTulaDIuNTPy3Ry4gLGJ6Z1O3vE1krgXZNrsQ+LFTGHVxVjcXPs17LhbZVGedAJv8XZ1tvj5FvSg==}
 
-  luabundle@1.6.0:
-    resolution: {integrity: sha512-WAiumy/R8GZIq4eCkFkOYXjAqxZUphGrKVvr5AG/obflBgV8ltiNLMF8nKbCmZvhR0b94S4rYFKisJ5eYJaRvA==}
+  luabundle@1.7.0:
+    resolution: {integrity: sha512-0tyADkfCSXLgj3MEikZ0+aE/ZxRrCZhat1k8yPOeN7cE+rublHMma1AtEXHdHpXMk7RCl6OECFWMDKf1d70Pgw==}
     engines: {node: '>=8.0.0'}
 
   minimist@1.2.8:
@@ -195,16 +195,13 @@ packages:
     resolution: {integrity: sha512-7++dFhtcx3353uBaq8DDR4NuxBetBzC7ZQOhmTQInHEd6bSrXdiEyzCvG07Z44UYdLShWUyXt5M/yhz8ekcb1A==}
     engines: {node: '>=8'}
 
-  tslib@1.14.1:
-    resolution: {integrity: sha512-Xni35NKzjgMrwevysHTCArtLDpPvye8zV/0E4EyYn43P7/7qvQwPh9BGkHewbMulVntbigmcT7rdX3BNo9wRJg==}
-
-  tts-dev-helper@0.1.5:
-    resolution: {integrity: sha512-zI9F/TNRLbc34cmMCAvOqhnLYRjmUlCMcRUXCU8Iiz6DwbTlIqtmk7J8Q7wmTP66aMtvSBsE6YoRv4yZz/dU2w==}
+  tts-dev-helper@0.1.7:
+    resolution: {integrity: sha512-oOicWR2RHYOywl/kJc/2/9E3BSE3eTfsa8yn+AjxoQjOLeP/XBEam9+K0LbUXbXFMDXhvBDmvXXC1RqyyeOs1w==}
     engines: {node: '>=18.18.2'}
     hasBin: true
 
-  undici-types@5.26.5:
-    resolution: {integrity: sha512-JlCMO+ehdEIKqlFxk6IfVoAUVmgz7cU7zD/h9XZ0qzeosSHmUJVOzSQvvYSYWXkFXC+IfLKSIffhv0sVZup6pA==}
+  undici-types@6.13.0:
+    resolution: {integrity: sha512-xtFJHudx8S2DSoujjMd1WeWvn7KKWFRESZTMeL1RptAYERu29D6jphMjjY+vn96jvN3kVPDNxU/E13VTaXj6jg==}
 
   universalify@2.0.1:
     resolution: {integrity: sha512-gptHNQghINnc/vTGIk0SOFGFNXw7JVrlRUtConJRlvaw6DuX0wO5Jeko9sWrMBhh+PsYAZ7oXAiOnf/UKogyiw==}
@@ -233,22 +230,22 @@ snapshots:
       big.js: 6.2.1
       json-stable-stringify: 1.1.1
       lodash: 4.17.21
-      luabundle: 1.6.0
+      luabundle: 1.7.0
 
   '@tts-tools/xmlbundle@1.1.0': {}
 
   '@types/fs-extra@11.0.4':
     dependencies:
       '@types/jsonfile': 6.1.4
-      '@types/node': 20.14.9
+      '@types/node': 22.1.0
 
   '@types/jsonfile@6.1.4':
     dependencies:
-      '@types/node': 20.14.9
+      '@types/node': 22.1.0
 
-  '@types/node@20.14.9':
+  '@types/node@22.1.0':
     dependencies:
-      undici-types: 5.26.5
+      undici-types: 6.13.0
 
   big.js@6.2.1: {}
 
@@ -359,10 +356,9 @@ snapshots:
 
   lodash@4.17.21: {}
 
-  luabundle@1.6.0:
+  luabundle@1.7.0:
     dependencies:
       moonsharp-luaparse: 0.2.4
-      tslib: 1.14.1
 
   minimist@1.2.8: {}
 
@@ -395,9 +391,7 @@ snapshots:
 
   shebang-regex@3.0.0: {}
 
-  tslib@1.14.1: {}
-
-  tts-dev-helper@0.1.5:
+  tts-dev-helper@0.1.7:
     dependencies:
       '@matanlurey/tts-editor': https://codeload.github.com/matanlurey/tts-editor/tar.gz/2b08688209154c02ee93ae14aff2331ac112a2f4
       '@matanlurey/tts-runner': https://codeload.github.com/matanlurey/tts-runner/tar.gz/6b3df0ac7233a3ab33c4dcd3292d1e3bca9c25d6
@@ -405,7 +399,7 @@ snapshots:
       commander: 11.1.0
       fs-extra: 11.2.0
 
-  undici-types@5.26.5: {}
+  undici-types@6.13.0: {}
 
   universalify@2.0.1: {}
 

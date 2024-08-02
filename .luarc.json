@@ -3,11 +3,35 @@
   "hint.enable": true,
   "runtime.version": "Lua 5.1",
   "workspace.library": ["addons/TTSLua/library"],
-  "diagnostics.neededFileStatus": {
-    "codestyle-check": "Any"
-  },
   "diagnostics.disable": [
     "codestyle-check",
     "lowercase-global"
-  ]
+  ],
+  "runtime.builtin": {
+    "basic": "disable",
+    "builtin": "disable",
+    "math": "enable",
+    "bit": "disable",
+    "bit32": "enable",
+    "coroutine": "enable",
+    "os": "disable",
+    "debug": "disable",
+    "ffi": "disable",
+    "io": "disable",
+    "jit": "disable",
+    "package": "disable",
+    "string": "disable",
+    "table": "enable",
+    "table.clear": "disable",
+    "table.new": "disable",
+    "utf8": "disable"
+  },
+  "diagnostics.globals": [
+    "require",
+    "_VERSION",
+    "_MOONSHARP"
+  ],
+  "diagnostics.neededFileStatus": {
+    "codestyle-check": "Any"
+  }
 }
